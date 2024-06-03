@@ -1,0 +1,15 @@
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Debug\transportation system.exe.config
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Debug\transportation system.exe
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Debug\transportation system.pdb
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Debug\buisness_layer.dll
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Debug\data_layer.dll
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Debug\buisness_layer.pdb
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Debug\data_layer.pdb
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation system.csproj.AssemblyReference.cache
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation_system.Form1.resources
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation_system.Properties.Resources.resources
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation system.csproj.GenerateResource.cache
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation system.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation system.csproj.CopyComplete
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation system.exe
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation system.pdb

@@ -23,7 +23,7 @@ namespace buisness_layer
         {
             get
             {
-                return dailyExchange_data.getNetAmount(this.Date); 
+                return dailyExchange_data.getNetAmount(this.ID); 
             }
         }
 

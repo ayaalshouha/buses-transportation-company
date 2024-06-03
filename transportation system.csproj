@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -84,6 +85,15 @@
       <Project>{ee0072d2-fed3-4f34-a187-04448d5acf90}</Project>
       <Name>buisness_layer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="208127004-school-bus-with-sun-behind.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_left %283%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

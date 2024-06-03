@@ -11,7 +11,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace data_layer
 {
-    internal class monthlyExchange_data
+    public class monthlyExchange_data
     {
         public static bool getExchangeByMonthYear(int month, int year, ref stMonthlyExchange exchange)
         {
@@ -131,17 +131,17 @@ namespace data_layer
             return RowAffected > 0;
         }
              
-        public static bool isExist_ByDate(DateTime date)
+        public static bool isExist_ByMonth(int month)
         {
             bool isFound = false;
             SqlConnection Connection = new SqlConnection(DataSetting.ConnectionString);
             try
             {
                 string Query = @"SELECT ID FROM monthly_exchange
-                        WHERE date_time = @date;";
+                        WHERE MONTH(date_time) = @month;";
 
                 SqlCommand command = new SqlCommand(Query, Connection);
-                command.Parameters.AddWithValue("@date", date);
+                command.Parameters.AddWithValue("@month", month);
                 Connection.Open();
                 object result = command.ExecuteScalar();
                 isFound = (result != null);
@@ -186,7 +186,7 @@ namespace data_layer
             return RowAffected > 0;
         }
 
-        public static decimal PersonPercentPerMonth(enPeople person, int year, int month)
+        public static decimal PersonPercentPerMonth(enPeople person, int exchangeID)
         {
             decimal req_percent = 0;
             var columnMapping = new Dictionary<enPeople, string>
@@ -206,13 +206,11 @@ namespace data_layer
             try
             {
                 string query = @"select @personname from monthly_exchange 
-                        where MONTH(date_time) = @month AND YEAR(date_time) = @year;";
+                        where ID = @exchangeID;";
 
                 Connection.Open();
                 SqlCommand command = new SqlCommand(query, Connection);
-                command.Parameters.AddWithValue("@personname", person_name);
-                command.Parameters.AddWithValue("@year", year);
-                command.Parameters.AddWithValue("@month", month);
+                command.Parameters.AddWithValue("@exchangeID", exchangeID);
 
                 object result = command.ExecuteScalar();
                 if (result != null && decimal.TryParse(result.ToString(), out decimal value))
@@ -230,5 +228,39 @@ namespace data_layer
             }
             return req_percent;
         }
+
+        public static decimal getNetAmount(int exchangeID)
+        {
+            decimal NetAmount = -1;
+            SqlConnection connection = new SqlConnection(DataSetting.ConnectionString);
+            try
+            {
+
+                string query = "select net_amount from monthly_exchange where ID = @exchangeID;";
+
+                SqlCommand command = new SqlCommand(@query, connection);
+                command.Parameters.AddWithValue("@exchangeID", exchangeID);
+
+                connection.Open();
+                object result = command.ExecuteScalar();
+
+                if (result != null && decimal.TryParse(result.ToString(), out decimal netamount))
+                {
+                    NetAmount = netamount;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return NetAmount;
+        }
+
+
     }
 }

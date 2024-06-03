@@ -154,17 +154,17 @@ namespace data_layer
 
             return RowAffected > 0;
         }
-        public static decimal getNetAmount(DateTime date)
+        public static decimal getNetAmount(int exchangeID)
         {
             decimal NetAmount = -1; 
             SqlConnection connection = new SqlConnection(DataSetting.ConnectionString);
             try
             {
                
-                string query = "select amount_left from daily_exchange where date_time = @date;";
+                string query = "select amount_left from daily_exchange where ID = @exchangeID;";
                 
                 SqlCommand command =  new SqlCommand(@query, connection);
-                command.Parameters.AddWithValue("@date", date);
+                command.Parameters.AddWithValue("@exchangeID", exchangeID);
 
                 connection.Open();
                 object result = command.ExecuteScalar();
