@@ -46,11 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Daily Exchange\FrmAddEditDailyExchange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Daily Exchange\FrmAddEditDailyExchange.Designer.cs">
+      <DependentUpon>FrmAddEditDailyExchange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Daily Exchange\FrmTotalDailyExchanges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Daily Exchange\FrmTotalDailyExchanges.Designer.cs">
+      <DependentUpon>FrmTotalDailyExchanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monthly Exchange\FrmAddEditMonthlyExchange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monthly Exchange\FrmAddEditMonthlyExchange.Designer.cs">
+      <DependentUpon>FrmAddEditMonthlyExchange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monthly Exchange\FrmTotalMonthlyExchanges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monthly Exchange\FrmTotalMonthlyExchanges.Designer.cs">
+      <DependentUpon>FrmTotalMonthlyExchanges.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +118,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arrow_left %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Total\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

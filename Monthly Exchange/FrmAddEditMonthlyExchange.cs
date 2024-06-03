@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace transportation_system
+namespace transportation_system.Monthly_Exchange
 {
-    public partial class Form1 : Form
+    public partial class FrmAddEditMonthlyExchange : Form
     {
-        public Form1()
+        public FrmAddEditMonthlyExchange()
         {
             InitializeComponent();
-        }
-
-        private void btnAddDailyExchange_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

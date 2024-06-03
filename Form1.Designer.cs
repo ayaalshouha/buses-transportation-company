@@ -57,6 +57,7 @@
             this.btnAddDailyExchange.Text = "ادخال صرف يومي";
             this.btnAddDailyExchange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddDailyExchange.UseVisualStyleBackColor = false;
+            this.btnAddDailyExchange.Click += new System.EventHandler(this.btnAddDailyExchange_Click);
             // 
             // panel1
             // 
