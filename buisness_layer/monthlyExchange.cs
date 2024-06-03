@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace data_layer
+namespace buisness_layer
 {
-    internal class dailyExchange
+    public class monthlyExchange
     {
+
     }
 }
