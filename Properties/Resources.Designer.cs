@@ -63,6 +63,16 @@ namespace transportation_system.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1 {
+            get {
+                object obj = ResourceManager.GetObject("1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _208127004_school_bus_with_sun_behind {
             get {
                 object obj = ResourceManager.GetObject("208127004-school-bus-with-sun-behind", resourceCulture);
@@ -83,9 +93,20 @@ namespace transportation_system.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap images {
+        internal static System.Drawing.Bitmap bus_icon_public_transport_bus_marker_for_map_public_transportation_transit_round_icon_bus_pictogram_illustration_vector {
             get {
-                object obj = ResourceManager.GetObject("images", resourceCulture);
+                object obj = ResourceManager.GetObject("bus-icon-public-transport-bus-marker-for-map-public-transportation-transit-round-" +
+                        "icon-bus-pictogram-illustration-vector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_city_public_transport_infrastructure_image_1107196 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-city-public-transport-infrastructure-image_1107196", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

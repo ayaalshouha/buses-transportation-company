@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using transportation_system.Daily_Exchange;
 
 namespace transportation_system
 {
@@ -19,7 +20,9 @@ namespace transportation_system
 
         private void btnAddDailyExchange_Click(object sender, EventArgs e)
         {
-
+            FrmAddEditDailyExchange frm = new FrmAddEditDailyExchange();
+            frm.ShowDialog();
         }
+
     }
 }

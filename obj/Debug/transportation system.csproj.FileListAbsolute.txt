@@ -13,3 +13,4 @@ C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation sy
 C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation system.csproj.CopyComplete
 C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation system.exe
 C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation system.pdb
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation_system.Daily_Exchange.FrmAddEditDailyExchange.resources

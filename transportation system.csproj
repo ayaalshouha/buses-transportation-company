@@ -78,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Daily Exchange\FrmAddEditDailyExchange.resx">
+      <DependentUpon>FrmAddEditDailyExchange.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +124,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Total\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bus-icon-public-transport-bus-marker-for-map-public-transportation-transit-round-icon-bus-pictogram-illustration-vector.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-city-public-transport-infrastructure-image_1107196.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
