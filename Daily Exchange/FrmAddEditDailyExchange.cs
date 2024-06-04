@@ -33,9 +33,8 @@ namespace transportation_system.Daily_Exchange
 
         private void FrmAddEditDailyExchange_Load(object sender, EventArgs e)
         {
+            dateTimePicker1.Value = DateTime.Now; 
             _ResetVisibleElements();
-
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
