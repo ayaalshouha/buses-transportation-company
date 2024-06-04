@@ -38,7 +38,8 @@ namespace data_layer
                     exchange.DailyFuel = (decimal)reader["daily_fuel"];
                     exchange.BusNumber = (int)reader["bus_number"];
                     exchange.Date = (DateTime)reader["date_time"];
-                    exchange.NetAmount = (decimal)reader["net_amount"]; 
+                    //exchange.NetAmount = (decimal)reader["net_amount"]; 
+                    exchange.MiscCost = (decimal)reader["misc_cost"]; 
                 }
                 reader.Close();
 
@@ -68,16 +69,11 @@ namespace data_layer
                                  @workerpay,
                                  @companypay,
                                  @dailyfuel,
-                                 @bus_number,
+                                 @busnumber,
                                  @datetime,
+                                 @misccost,
                                  @moveID = @_ID output;
                                SELECT @_ID;";
-
-
-                    /*string Query = @"INSERT INTO 
-                    daily_exchange(total_amount , daily_repair, worker_pay, company_pay, daily_fuel, bus_number, date_time)
-                    VALUES(@totalamount, @dailyrepair, @workerpay, @companypay, @dailyfuel,@busnumber, @datetime);
-                    SELECT SCOPE_IDENTITY();";*/
                 
                 SqlCommand Command = new SqlCommand(Query, Connection);
 
@@ -88,7 +84,7 @@ namespace data_layer
                 Command.Parameters.AddWithValue("@dailyfuel", exchange.DailyFuel);
                 Command.Parameters.AddWithValue("@busnumber", exchange.BusNumber);
                 Command.Parameters.AddWithValue("@datetime", exchange.Date);
-
+                Command.Parameters.AddWithValue("@misccost", exchange.MiscCost);
 
                 Connection.Open();
                 object result = Command.ExecuteScalar();
@@ -125,6 +121,7 @@ namespace data_layer
                         daily_fuel = @dailyfuel, 
                         bus_number = @busnumber,
                         date_time = @datetime,
+                        misc_cost = @misccost,
                         WHERE ID = @exchangeID;";
 
 
@@ -137,7 +134,7 @@ namespace data_layer
                 Command.Parameters.AddWithValue("@dailyfuel", exchange.DailyFuel);
                 Command.Parameters.AddWithValue("@busnumber", exchange.BusNumber);
                 Command.Parameters.AddWithValue("@datetime", exchange.Date);
-               
+                Command.Parameters.AddWithValue("@misccost", exchange.MiscCost);
                 Connection.Open();
                 RowAffected = Command.ExecuteNonQuery();
             }

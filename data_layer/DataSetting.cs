@@ -19,7 +19,9 @@ namespace data_layer
         public int BusNumber { get; set; }
         public decimal DailyFuel { get; set; }
         public DateTime Date { get; set; }
-        public decimal NetAmount { get; set; }
+        //public decimal NetAmount { get; set; }
+
+        public decimal MiscCost {  get; set; }
     }
     public struct stMonthlyExchange
     {

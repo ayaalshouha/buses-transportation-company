@@ -19,6 +19,7 @@ namespace buisness_layer
         public int BusNumber { get; set; }
         public decimal DailyFuel { get; set; }
         public DateTime Date { get; set; }
+        public decimal MiscCost {  get; set; }
         public decimal NetAmount
         {
             get
@@ -36,6 +37,7 @@ namespace buisness_layer
             this.CompanyPay = exchange.CompanyPay;
             this.DailyRepair = exchange.DailyRepair;
             this.Date = exchange.Date;
+            this.MiscCost = exchange.MiscCost;
             mode = enMode.update; 
         }
 
@@ -49,6 +51,7 @@ namespace buisness_layer
             this.BusNumber = -1;
             this.DailyRepair = -1;
             this.Date = DateTime.Now;
+            this.MiscCost = -1;
             this.mode = enMode.add;
         }
 
@@ -65,13 +68,14 @@ namespace buisness_layer
         {
             stDailyExchange exchange = new stDailyExchange
             {
-                ID = this.ID, 
+                ID = this.ID,
                 TotalAmount = this.TotalAmount,
                 DailyFuel = this.DailyFuel,
                 WorkerPay = this.WorkerPay,
                 CompanyPay = this.CompanyPay,
                 BusNumber = this.BusNumber,
                 DailyRepair = this.DailyRepair,
+                MiscCost = this.MiscCost,
                 Date= this.Date,
             };
             this.ID = dailyExchange_data.Add(exchange);
@@ -89,6 +93,7 @@ namespace buisness_layer
                 CompanyPay = this.CompanyPay,
                 BusNumber = this.BusNumber,
                 DailyRepair = this.DailyRepair,
+                MiscCost = this.MiscCost,
                 Date = this.Date,
             };
 
