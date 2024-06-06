@@ -30,12 +30,12 @@
         {
             this.btnAddDailyExchange = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnAddMonthlyExchange = new System.Windows.Forms.Button();
             this.DailyExchangeData = new System.Windows.Forms.Button();
             this.btnMonthlyExchangeData = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +71,16 @@
             this.panel1.Size = new System.Drawing.Size(700, 740);
             this.panel1.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(125, 580);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(467, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Al-Shouha Transportation Company";
+            // 
             // btnAddMonthlyExchange
             // 
             this.btnAddMonthlyExchange.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -89,6 +99,7 @@
             this.btnAddMonthlyExchange.Text = "ادخال صرف شهري";
             this.btnAddMonthlyExchange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddMonthlyExchange.UseVisualStyleBackColor = false;
+            this.btnAddMonthlyExchange.Click += new System.EventHandler(this.btnAddMonthlyExchange_Click);
             // 
             // DailyExchangeData
             // 
@@ -165,16 +176,6 @@
             this.button6.Text = "اجمالي رصيد الاحتياط";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button6.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(125, 580);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(467, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Al-Shouha Transportation Company";
             // 
             // Form1
             // 

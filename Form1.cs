@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using transportation_system.Daily_Exchange;
+using transportation_system.Monthly_Exchange;
 
 namespace transportation_system
 {
@@ -24,5 +25,10 @@ namespace transportation_system
             frm.ShowDialog();
         }
 
+        private void btnAddMonthlyExchange_Click(object sender, EventArgs e)
+        {
+            FrmAddEditMonthlyExchange frm = new FrmAddEditMonthlyExchange();
+            frm.ShowDialog();
+        }
     }
 }
