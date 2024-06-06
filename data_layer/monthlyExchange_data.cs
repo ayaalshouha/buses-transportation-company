@@ -36,11 +36,12 @@ namespace data_layer
                     exchange.ID = (int)reader["ID"];
                     exchange.TotalAmountPerMonth = (decimal)reader["total_amount"];
                     exchange.BackupAmount = (decimal)reader["backup_amount"];
-                    exchange.NetAmount = (decimal)reader["net_amount"];
-                    exchange.AkefPercent = (decimal)reader["akef_percent"];
-                    exchange.khaldounPercent = (decimal)reader["khldoun_percent"];
-                    exchange.WaleedPercent = (int)reader["waleed_percent"];
+                    exchange.WorkerSalary = (decimal)reader["worker_salary"];
                     exchange.Date = (DateTime)reader["date_time"];
+                    /* exchange.NetAmount = (decimal)reader["net_amount"];
+                     exchange.AkefPercent = (decimal)reader["akef_percent"];
+                     exchange.khaldounPercent = (decimal)reader["khldoun_percent"];
+                     exchange.WaleedPercent = (int)reader["waleed_percent"];*/
                 }
                 reader.Close();
 
@@ -66,8 +67,8 @@ namespace data_layer
             try
             {
                 string Query = @"INSERT INTO  
-                        monthly_exchanage  (total_amount, backup_amount, date_time)
-                        VALUES  (@totalamount, @backupamount, @datetime);
+                        monthly_exchanage  (total_amount, backup_amount,worker_salary, date_time)
+                        VALUES  (@totalamount, @backupamount,@workersalary, @datetime);
                           SELECT SCOPE_IDENTITY();";
 
                 SqlCommand Command = new SqlCommand(Query, Connection);
@@ -75,7 +76,7 @@ namespace data_layer
                 Command.Parameters.AddWithValue("@totalamount", exchange.TotalAmountPerMonth);
                 Command.Parameters.AddWithValue("@backupamount", exchange.BackupAmount);
                 Command.Parameters.AddWithValue("@datetime", exchange.Date);
-
+                Command.Parameters.AddWithValue("@workersalary", exchange.WorkerSalary);
                 Connection.Open();
                 object result = Command.ExecuteScalar();
 
@@ -106,13 +107,15 @@ namespace data_layer
             {
                 string Query = @"Update monthy_exchange
                                 SET total_amount = @totalamount,
-                                    backup_amount = @backup_amount
+                                    backup_amount = @backupamount,
+                                    worker_salary = @workersalary
                                 WHERE ID = @exchangeID;";
 
                 SqlCommand Command = new SqlCommand(Query, Connection);
                 Command.Parameters.AddWithValue("@totalamount", exchange.TotalAmountPerMonth);
-                Command.Parameters.AddWithValue("@backup_amount", exchange.BackupAmount);
+                Command.Parameters.AddWithValue("@backupamount", exchange.BackupAmount);
                 Command.Parameters.AddWithValue("@exchangeID", exchange.ID);
+                Command.Parameters.AddWithValue("@workersalary", exchange.WorkerSalary);
 
                 Connection.Open();
                 RowAffected = Command.ExecuteNonQuery();
