@@ -25,7 +25,6 @@ namespace transportation_system.Monthly_Exchange
 
         private void _DefaultValues()
         {
-            dateTimePicker1.Value = DateTime.MinValue; 
             backupValue.ReadOnly = true;
             salaryValue.ReadOnly = true;
             totalAmount.ReadOnly = true;
@@ -40,7 +39,6 @@ namespace transportation_system.Monthly_Exchange
             salaryValue.ReadOnly = false;
         }
 
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (!ValidateChildren())
@@ -49,13 +47,16 @@ namespace transportation_system.Monthly_Exchange
             if (MessageBox.Show("هل انت متأكد انك تريد الحفظ؟", "Message Box", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 monthlyExchange exchange = new monthlyExchange();
-               
+
+                exchange.TotalAmount = decimal.Parse(totalAmount.Text);
                 exchange.BackupAmount = backupValue.Value;
                 exchange.WorkerSalary = salaryValue.Value;
+                exchange.Date = dateTimePicker1.Value; 
                 
                 if (exchange.Save())
                 {
                     MessageBox.Show("تم حفظ البيانات بنجاح.", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
                     txtNetAmount.Text = exchange.NetAmount.ToString();
                     akefPercent.Text = exchange.AkefPercent.ToString();
                     waleedPercent.Text = exchange.WaleedPercent.ToString();
@@ -91,7 +92,6 @@ namespace transportation_system.Monthly_Exchange
             {
                 _DefaultValues();
             }
-
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -105,9 +105,8 @@ namespace transportation_system.Monthly_Exchange
             }
             else
             {
-                monthlyExchange.TotalAmountPerMonth(dateTimePicker1.Value);
+                totalAmount.Text = monthlyExchange.TotalAmountPerMonth(dateTimePicker1.Value).ToString();
                 _ResetValues();
-                
             }
         }
     }

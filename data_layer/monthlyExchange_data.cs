@@ -38,10 +38,6 @@ namespace data_layer
                     exchange.BackupAmount = (decimal)reader["backup_amount"];
                     exchange.WorkerSalary = (decimal)reader["worker_salary"];
                     exchange.Date = (DateTime)reader["date_time"];
-                    /* exchange.NetAmount = (decimal)reader["net_amount"];
-                     exchange.AkefPercent = (decimal)reader["akef_percent"];
-                     exchange.khaldounPercent = (decimal)reader["khldoun_percent"];
-                     exchange.WaleedPercent = (int)reader["waleed_percent"];*/
                 }
                 reader.Close();
 
@@ -58,7 +54,6 @@ namespace data_layer
             return isFound;
 
         }
-
         public static int Add(stMonthlyExchange exchange)
         {
             int newID = -1;
@@ -67,12 +62,12 @@ namespace data_layer
             try
             {
                 string Query = @"INSERT INTO  
-                        monthly_exchanage  (backup_amount,worker_salary, date_time)
-                        VALUES  (@backupamount,@workersalary, @datetime);
+                        monthly_exchange(total_amount,backup_amount,worker_salary, date_time)
+                        VALUES  (@totalAmount, @backupamount,@workersalary, @datetime);
                           SELECT SCOPE_IDENTITY();";
 
                 SqlCommand Command = new SqlCommand(Query, Connection);
-
+                Command.Parameters.AddWithValue("@totalAmount", exchange.TotalAmountPerMonth);
                 Command.Parameters.AddWithValue("@backupamount", exchange.BackupAmount);
                 Command.Parameters.AddWithValue("@datetime", exchange.Date);
                 Command.Parameters.AddWithValue("@workersalary", exchange.WorkerSalary);
@@ -97,7 +92,6 @@ namespace data_layer
 
             return newID;
         }
-
         public static bool Update(stMonthlyExchange exchange)
         {
             int RowAffected = 0;
@@ -105,12 +99,13 @@ namespace data_layer
             try
             {
                 string Query = @"Update monthy_exchange
-                                SET backup_amount = @backupamount,
+                                SET total_amount = @totalAmount , 
+                                    backup_amount = @backupamount,
                                     worker_salary = @workersalary
                                 WHERE ID = @exchangeID;";
 
                 SqlCommand Command = new SqlCommand(Query, Connection);
-                Command.Parameters.AddWithValue("@totalamount", exchange.TotalAmountPerMonth);
+                Command.Parameters.AddWithValue("@total_amount", exchange.TotalAmountPerMonth);
                 Command.Parameters.AddWithValue("@backupamount", exchange.BackupAmount);
                 Command.Parameters.AddWithValue("@exchangeID", exchange.ID);
                 Command.Parameters.AddWithValue("@workersalary", exchange.WorkerSalary);
@@ -131,7 +126,6 @@ namespace data_layer
 
             return RowAffected > 0;
         }
-             
         public static bool isExist_ByMonth(int month)
         {
             bool isFound = false;
@@ -158,7 +152,6 @@ namespace data_layer
             }
             return isFound;
         }
-
         public static bool Delete(int ExchangeID)
         {
             int RowAffected = -1;
@@ -186,34 +179,25 @@ namespace data_layer
             }
             return RowAffected > 0;
         }
-
-        public static decimal PersonPercentPerMonth(enPeople person, int exchangeID)
+        public static decimal AkefPercentPerMonth(int exchangeID)
         {
             decimal req_percent = 0;
-            var columnMapping = new Dictionary<enPeople, string>
-            {
-                { enPeople.waleed, "waleed_percent" },
-                { enPeople.akef, "akef_percent" },
-                { enPeople.khaldoun, "khldoun_percent" }
-            };
-
-            if (!columnMapping.TryGetValue(person, out string person_name))
-            {
-                throw new ArgumentException("Invalid person");
-            }
 
             SqlConnection Connection = new SqlConnection(DataSetting.ConnectionString);
 
             try
             {
-                string query = @"select @personname from monthly_exchange 
+                string query = @"select akef_percent from monthly_exchange 
                         where ID = @exchangeID;";
 
                 Connection.Open();
+
                 SqlCommand command = new SqlCommand(query, Connection);
+
                 command.Parameters.AddWithValue("@exchangeID", exchangeID);
 
                 object result = command.ExecuteScalar();
+
                 if (result != null && decimal.TryParse(result.ToString(), out decimal value))
                 {
                     req_percent = value;
@@ -229,7 +213,74 @@ namespace data_layer
             }
             return req_percent;
         }
+        public static decimal WaleedPercentPerMonth(int exchangeID)
+        {
+            decimal req_percent = 0;
 
+            SqlConnection Connection = new SqlConnection(DataSetting.ConnectionString);
+
+            try
+            {
+                string query = @"select waleed_percent from monthly_exchange 
+                        where ID = @exchangeID;";
+
+                Connection.Open();
+
+                SqlCommand command = new SqlCommand(query, Connection);
+
+                command.Parameters.AddWithValue("@exchangeID", exchangeID);
+
+                object result = command.ExecuteScalar();
+
+                if (result != null && decimal.TryParse(result.ToString(), out decimal value))
+                {
+                    req_percent = value;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return req_percent;
+        }
+        public static decimal khaldounPercentPerMonth(int exchangeID)
+        {
+            decimal req_percent = 0;
+
+            SqlConnection Connection = new SqlConnection(DataSetting.ConnectionString);
+
+            try
+            {
+                string query = @"select khldoun_percent from monthly_exchange 
+                        where ID = @exchangeID;";
+
+                Connection.Open();
+
+                SqlCommand command = new SqlCommand(query, Connection);
+
+                command.Parameters.AddWithValue("@exchangeID", exchangeID);
+
+                object result = command.ExecuteScalar();
+
+                if (result != null && decimal.TryParse(result.ToString(), out decimal value))
+                {
+                    req_percent = value;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return req_percent;
+        }
         public static decimal getNetAmount(int exchangeID)
         {
             decimal NetAmount = -1;
@@ -261,7 +312,6 @@ namespace data_layer
 
             return NetAmount;
         }
-
         public static decimal getTotalPerMonth(int month, int year)
         {
             
@@ -271,7 +321,7 @@ namespace data_layer
             try
             {
                 string query = @"select sum(amount_left) from daily_exchange
-                        WHERE MONTH(date) = @month and YEAR(date) = @year";
+                        WHERE MONTH(date_time) = @month and YEAR(date_time) = @year";
 
                 SqlCommand command = new SqlCommand(@query, connection);
                 command.Parameters.AddWithValue("@month", month);
@@ -297,6 +347,5 @@ namespace data_layer
             return totalAmount;
 
         }
-
     }
 }

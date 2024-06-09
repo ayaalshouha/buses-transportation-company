@@ -27,14 +27,10 @@ namespace data_layer
     {
         public int ID { get; set; }
         public DateTime Date { get; set; }
-        //public decimal TotalAmountPerMonth { get; set; }
-
+        public decimal TotalAmountPerMonth { get; set; }
         public decimal WorkerSalary {  get; set; }
         public decimal BackupAmount { get; set; }
-       /* public decimal NetAmount { get; set; }
-        public decimal AkefPercent { get; set; }
-        public decimal khaldounPercent { get; set; }
-        public decimal WaleedPercent {  get; set; } */
+      
     }
 
     public class DataSetting

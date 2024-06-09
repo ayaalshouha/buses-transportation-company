@@ -14,16 +14,10 @@ namespace buisness_layer
         private enum enMode { add, update }
         private enMode mode = enMode.add; 
         public int ID { get; set; }
-        public DateTime Date { get; set; }
-        public decimal BackupAmount { get; set; }
+        public decimal TotalAmount { get; set; }
         public decimal WorkerSalary { get; set; }
-        public decimal TotalAmount 
-        { 
-            get
-            {
-                return monthlyExchange_data.getTotalPerMonth(this.Date.Month, this.Date.Year);
-            } 
-        }
+        public decimal BackupAmount { get; set; }
+        public DateTime Date { get; set; }
         public decimal NetAmount 
         {
             get
@@ -35,26 +29,27 @@ namespace buisness_layer
         {
             get
             {
-                return monthlyExchange_data.PersonPercentPerMonth(enPeople.akef, this.ID); 
+                return monthlyExchange_data.AkefPercentPerMonth(this.ID); 
             }
         }
         public decimal khaldounPercent
         {
             get
             {
-                return monthlyExchange_data.PersonPercentPerMonth(enPeople.khaldoun, this.ID);
+                return monthlyExchange_data.khaldounPercentPerMonth(this.ID);
             }
         }
         public decimal WaleedPercent { 
             get 
             {
-                return monthlyExchange_data.PersonPercentPerMonth(enPeople.waleed, this.ID);
+                return monthlyExchange_data.WaleedPercentPerMonth(this.ID);
             } 
         }
 
         private monthlyExchange(stMonthlyExchange exchange)
         {
             this.ID = exchange.ID;
+            this.TotalAmount = exchange.TotalAmountPerMonth; 
             this.BackupAmount = exchange.BackupAmount;
             this.Date = exchange.Date;
             this.WorkerSalary = exchange.WorkerSalary; 
@@ -63,6 +58,7 @@ namespace buisness_layer
         public monthlyExchange()
         {
             this.ID = -1;
+            this.TotalAmount = -1;
             this.BackupAmount = -1;
             this.Date = DateTime.MinValue;
             this.WorkerSalary = -1;
@@ -83,6 +79,7 @@ namespace buisness_layer
             {
                 ID = this.ID,
                 BackupAmount = this.BackupAmount,
+                TotalAmountPerMonth = this.TotalAmount,
                 Date = this.Date,
                 WorkerSalary = this.WorkerSalary
             };
@@ -95,6 +92,7 @@ namespace buisness_layer
             stMonthlyExchange exchange = new stMonthlyExchange
             {
                 ID = this.ID,
+                TotalAmountPerMonth = this.TotalAmount,
                 BackupAmount = this.BackupAmount,
                 Date = this.Date,
                 WorkerSalary = this.WorkerSalary
@@ -129,7 +127,6 @@ namespace buisness_layer
         {
             return dailyExchange_data.Delete(this.ID);
         }
-
         public static decimal TotalAmountPerMonth(DateTime date)
         {
             return monthlyExchange_data.getTotalPerMonth(date.Month, date.Year); 
