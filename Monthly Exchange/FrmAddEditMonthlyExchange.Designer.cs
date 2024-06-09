@@ -48,6 +48,8 @@
             this.waleedPercent = new System.Windows.Forms.MaskedTextBox();
             this.khaldounPercent = new System.Windows.Forms.MaskedTextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.salaryValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backupValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,7 +59,7 @@
             // salaryValue
             // 
             this.salaryValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salaryValue.Location = new System.Drawing.Point(581, 239);
+            this.salaryValue.Location = new System.Drawing.Point(583, 267);
             this.salaryValue.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -71,7 +73,7 @@
             // backupValue
             // 
             this.backupValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backupValue.Location = new System.Drawing.Point(581, 176);
+            this.backupValue.Location = new System.Drawing.Point(583, 204);
             this.backupValue.Maximum = new decimal(new int[] {
             2000,
             0,
@@ -85,7 +87,7 @@
             // 
             this.txtNetAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNetAmount.ForeColor = System.Drawing.Color.Maroon;
-            this.txtNetAmount.Location = new System.Drawing.Point(564, 307);
+            this.txtNetAmount.Location = new System.Drawing.Point(566, 335);
             this.txtNetAmount.Mask = "00000";
             this.txtNetAmount.Name = "txtNetAmount";
             this.txtNetAmount.ReadOnly = true;
@@ -98,18 +100,18 @@
             this.lblNetAmount.AutoSize = true;
             this.lblNetAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNetAmount.ForeColor = System.Drawing.Color.Maroon;
-            this.lblNetAmount.Location = new System.Drawing.Point(882, 300);
+            this.lblNetAmount.Location = new System.Drawing.Point(908, 328);
             this.lblNetAmount.Name = "lblNetAmount";
             this.lblNetAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblNetAmount.Size = new System.Drawing.Size(178, 37);
+            this.lblNetAmount.Size = new System.Drawing.Size(154, 37);
             this.lblNetAmount.TabIndex = 39;
-            this.lblNetAmount.Text = "**صافي المبلغ:";
+            this.lblNetAmount.Text = "صافي المبلغ:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(954, 109);
+            this.label7.Location = new System.Drawing.Point(956, 137);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(106, 37);
@@ -121,18 +123,19 @@
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(521, 116);
+            this.dateTimePicker1.Location = new System.Drawing.Point(523, 144);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(180, 30);
             this.dateTimePicker1.TabIndex = 35;
             this.dateTimePicker1.Value = new System.DateTime(2024, 6, 4, 22, 28, 54, 0);
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(923, 491);
+            this.label5.Location = new System.Drawing.Point(925, 519);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(137, 37);
@@ -144,7 +147,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Maroon;
-            this.label4.Location = new System.Drawing.Point(931, 428);
+            this.label4.Location = new System.Drawing.Point(933, 456);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(129, 37);
@@ -156,7 +159,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(909, 365);
+            this.label3.Location = new System.Drawing.Point(911, 393);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label3.Size = new System.Drawing.Size(151, 37);
@@ -167,7 +170,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(803, 232);
+            this.label2.Location = new System.Drawing.Point(805, 260);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(257, 37);
@@ -178,7 +181,7 @@
             // 
             this.lbl.AutoSize = true;
             this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(739, 169);
+            this.lbl.Location = new System.Drawing.Point(741, 197);
             this.lbl.Name = "lbl";
             this.lbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl.Size = new System.Drawing.Size(321, 37);
@@ -232,7 +235,7 @@
             // 
             this.akefPercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.akefPercent.ForeColor = System.Drawing.Color.Maroon;
-            this.akefPercent.Location = new System.Drawing.Point(564, 371);
+            this.akefPercent.Location = new System.Drawing.Point(566, 399);
             this.akefPercent.Mask = "00000";
             this.akefPercent.Name = "akefPercent";
             this.akefPercent.ReadOnly = true;
@@ -244,7 +247,7 @@
             // 
             this.waleedPercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.waleedPercent.ForeColor = System.Drawing.Color.Maroon;
-            this.waleedPercent.Location = new System.Drawing.Point(564, 435);
+            this.waleedPercent.Location = new System.Drawing.Point(566, 463);
             this.waleedPercent.Mask = "00000";
             this.waleedPercent.Name = "waleedPercent";
             this.waleedPercent.ReadOnly = true;
@@ -256,7 +259,7 @@
             // 
             this.khaldounPercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.khaldounPercent.ForeColor = System.Drawing.Color.Maroon;
-            this.khaldounPercent.Location = new System.Drawing.Point(564, 497);
+            this.khaldounPercent.Location = new System.Drawing.Point(566, 525);
             this.khaldounPercent.Mask = "00000";
             this.khaldounPercent.Name = "khaldounPercent";
             this.khaldounPercent.ReadOnly = true;
@@ -268,12 +271,38 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox1.ForeColor = System.Drawing.Color.Maroon;
+            this.maskedTextBox1.Location = new System.Drawing.Point(43, 96);
+            this.maskedTextBox1.Mask = "00000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.ReadOnly = true;
+            this.maskedTextBox1.Size = new System.Drawing.Size(137, 30);
+            this.maskedTextBox1.TabIndex = 54;
+            this.maskedTextBox1.ValidatingType = typeof(int);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(194, 90);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(209, 37);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "صافي مبلغ الشهر:";
+            // 
             // FrmAddEditMonthlyExchange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1119, 648);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.khaldounPercent);
             this.Controls.Add(this.waleedPercent);
             this.Controls.Add(this.akefPercent);
@@ -295,6 +324,7 @@
             this.Name = "FrmAddEditMonthlyExchange";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddEditMonthlyExchange";
+            this.Load += new System.EventHandler(this.FrmAddEditMonthlyExchange_Load);
             ((System.ComponentModel.ISupportInitialize)(this.salaryValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backupValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -324,5 +354,7 @@
         private System.Windows.Forms.MaskedTextBox waleedPercent;
         private System.Windows.Forms.MaskedTextBox khaldounPercent;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

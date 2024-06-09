@@ -13,9 +13,21 @@ namespace transportation_system.Monthly_Exchange
 {
     public partial class FrmAddEditMonthlyExchange : Form
     {
-        public FrmAddEditMonthlyExchange()
+        private enum enMode { add , update}; 
+        private enMode _Mode = enMode.add;
+        private int exchange_id = -1;
+        public FrmAddEditMonthlyExchange(int exchangeID = -1)
         {
             InitializeComponent();
+            exchange_id = exchangeID;
+            _Mode = exchange_id == -1 ? enMode.add : enMode.update;
+        }
+
+        private void _DefaultValues()
+        {
+            dateTimePicker1.Value = DateTime.MinValue; 
+            backupValue.ReadOnly = true;
+            salaryValue.ReadOnly = true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -67,8 +79,18 @@ namespace transportation_system.Monthly_Exchange
             }
          }
 
+        private void FrmAddEditMonthlyExchange_Load(object sender, EventArgs e)
+        {
+            if (_Mode == enMode.add)
+            {
+                _DefaultValues();
+            }
 
+        }
 
-
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            // check if already exist by month 
+        }
     }
 }
