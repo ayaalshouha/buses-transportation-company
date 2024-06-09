@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +15,15 @@ namespace buisness_layer
         private enMode mode = enMode.add; 
         public int ID { get; set; }
         public DateTime Date { get; set; }
-        public decimal TotalAmountPerMonth { get; set; }
         public decimal BackupAmount { get; set; }
         public decimal WorkerSalary { get; set; }
+        public decimal TotalAmount 
+        { 
+            get
+            {
+                return monthlyExchange_data.getTotalPerMonth(this.Date.Month, this.Date.Year);
+            } 
+        }
         public decimal NetAmount 
         {
             get
@@ -48,7 +55,6 @@ namespace buisness_layer
         private monthlyExchange(stMonthlyExchange exchange)
         {
             this.ID = exchange.ID;
-            this.TotalAmountPerMonth = exchange.TotalAmountPerMonth;
             this.BackupAmount = exchange.BackupAmount;
             this.Date = exchange.Date;
             this.WorkerSalary = exchange.WorkerSalary; 
@@ -57,7 +63,6 @@ namespace buisness_layer
         public monthlyExchange()
         {
             this.ID = -1;
-            this.TotalAmountPerMonth = -1;
             this.BackupAmount = -1;
             this.Date = DateTime.MinValue;
             this.WorkerSalary = -1;
@@ -77,7 +82,6 @@ namespace buisness_layer
             stMonthlyExchange exchange = new stMonthlyExchange
             {
                 ID = this.ID,
-                TotalAmountPerMonth = this.TotalAmountPerMonth,
                 BackupAmount = this.BackupAmount,
                 Date = this.Date,
                 WorkerSalary = this.WorkerSalary
@@ -91,7 +95,6 @@ namespace buisness_layer
             stMonthlyExchange exchange = new stMonthlyExchange
             {
                 ID = this.ID,
-                TotalAmountPerMonth = this.TotalAmountPerMonth,
                 BackupAmount = this.BackupAmount,
                 Date = this.Date,
                 WorkerSalary = this.WorkerSalary
@@ -127,5 +130,9 @@ namespace buisness_layer
             return dailyExchange_data.Delete(this.ID);
         }
 
+        public static decimal TotalAmountPerMonth(DateTime date)
+        {
+            return monthlyExchange_data.getTotalPerMonth(date.Month, date.Year); 
+        }
     }
 }

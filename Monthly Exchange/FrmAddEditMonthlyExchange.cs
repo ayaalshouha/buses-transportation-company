@@ -28,6 +28,11 @@ namespace transportation_system.Monthly_Exchange
             dateTimePicker1.Value = DateTime.MinValue; 
             backupValue.ReadOnly = true;
             salaryValue.ReadOnly = true;
+            totalAmount.ReadOnly = true;
+            akefPercent.ReadOnly = true;
+            waleedPercent.ReadOnly = true;
+            khaldounPercent.ReadOnly = true;
+            txtNetAmount.ReadOnly = true;
         }
         private void _ResetValues()
         {
@@ -44,22 +49,17 @@ namespace transportation_system.Monthly_Exchange
             if (MessageBox.Show("هل انت متأكد انك تريد الحفظ؟", "Message Box", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 monthlyExchange exchange = new monthlyExchange();
-                //exchange.TotalAmountPerMonth = 
-                /* exchange.TotalAmountPerMonth = total.Value;
-                exchange.DailyFuel = FuelValue.Value;
-                exchange.DailyRepair = repairValue.Value;
-                exchange.WorkerPay = workerPayValue.Value;
-                exchange.CompanyPay = companyPayValue.Value;
-                exchange.BusNumber = rdBusOne.Checked ? 1 : 2;
-                exchange.Date = dateTimePicker1.Value;
-                exchange.MiscCost = miscValue.Value;*/
+               
+                exchange.BackupAmount = backupValue.Value;
+                exchange.WorkerSalary = salaryValue.Value;
                 
                 if (exchange.Save())
                 {
                     MessageBox.Show("تم حفظ البيانات بنجاح.", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtNetAmount.Visible = true;
-                    lblNetAmount.Visible = true;
                     txtNetAmount.Text = exchange.NetAmount.ToString();
+                    akefPercent.Text = exchange.AkefPercent.ToString();
+                    waleedPercent.Text = exchange.WaleedPercent.ToString();
+                    khaldounPercent.Text = exchange.khaldounPercent.ToString();
                     btnSave.Enabled = false;
                 }
                 else
@@ -101,10 +101,13 @@ namespace transportation_system.Monthly_Exchange
             if (monthlyExchange.isExist(month))
             {
                 MessageBox.Show("الشهر المحدد موجود مسبقاً !! ", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
             else
             {
+                monthlyExchange.TotalAmountPerMonth(dateTimePicker1.Value);
                 _ResetValues();
+                
             }
         }
     }

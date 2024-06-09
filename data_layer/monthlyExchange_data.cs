@@ -67,13 +67,12 @@ namespace data_layer
             try
             {
                 string Query = @"INSERT INTO  
-                        monthly_exchanage  (total_amount, backup_amount,worker_salary, date_time)
-                        VALUES  (@totalamount, @backupamount,@workersalary, @datetime);
+                        monthly_exchanage  (backup_amount,worker_salary, date_time)
+                        VALUES  (@backupamount,@workersalary, @datetime);
                           SELECT SCOPE_IDENTITY();";
 
                 SqlCommand Command = new SqlCommand(Query, Connection);
 
-                Command.Parameters.AddWithValue("@totalamount", exchange.TotalAmountPerMonth);
                 Command.Parameters.AddWithValue("@backupamount", exchange.BackupAmount);
                 Command.Parameters.AddWithValue("@datetime", exchange.Date);
                 Command.Parameters.AddWithValue("@workersalary", exchange.WorkerSalary);
@@ -106,8 +105,7 @@ namespace data_layer
             try
             {
                 string Query = @"Update monthy_exchange
-                                SET total_amount = @totalamount,
-                                    backup_amount = @backupamount,
+                                SET backup_amount = @backupamount,
                                     worker_salary = @workersalary
                                 WHERE ID = @exchangeID;";
 
@@ -264,6 +262,41 @@ namespace data_layer
             return NetAmount;
         }
 
+        public static decimal getTotalPerMonth(int month, int year)
+        {
+            
+
+            decimal totalAmount = -1;
+            SqlConnection connection = new SqlConnection(DataSetting.ConnectionString);
+            try
+            {
+                string query = @"select sum(amount_left) from daily_exchange
+                        WHERE MONTH(date) = @month and YEAR(date) = @year";
+
+                SqlCommand command = new SqlCommand(@query, connection);
+                command.Parameters.AddWithValue("@month", month);
+                command.Parameters.AddWithValue("@year", year);
+
+                connection.Open();
+                object result = command.ExecuteScalar();
+
+                if (result != null && decimal.TryParse(result.ToString(), out decimal netamount))
+                {
+                    totalAmount = netamount;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return totalAmount;
+
+        }
 
     }
 }

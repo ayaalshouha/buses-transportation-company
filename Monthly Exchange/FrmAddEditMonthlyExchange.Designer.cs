@@ -48,7 +48,7 @@
             this.waleedPercent = new System.Windows.Forms.MaskedTextBox();
             this.khaldounPercent = new System.Windows.Forms.MaskedTextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.totalAmount = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.salaryValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backupValue)).BeginInit();
@@ -271,17 +271,17 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // maskedTextBox1
+            // totalAmount
             // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.ForeColor = System.Drawing.Color.Maroon;
-            this.maskedTextBox1.Location = new System.Drawing.Point(43, 96);
-            this.maskedTextBox1.Mask = "00000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.ReadOnly = true;
-            this.maskedTextBox1.Size = new System.Drawing.Size(137, 30);
-            this.maskedTextBox1.TabIndex = 54;
-            this.maskedTextBox1.ValidatingType = typeof(int);
+            this.totalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalAmount.ForeColor = System.Drawing.Color.Maroon;
+            this.totalAmount.Location = new System.Drawing.Point(43, 96);
+            this.totalAmount.Mask = "00000";
+            this.totalAmount.Name = "totalAmount";
+            this.totalAmount.ReadOnly = true;
+            this.totalAmount.Size = new System.Drawing.Size(137, 30);
+            this.totalAmount.TabIndex = 54;
+            this.totalAmount.ValidatingType = typeof(int);
             // 
             // label1
             // 
@@ -301,7 +301,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1119, 648);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.totalAmount);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.khaldounPercent);
             this.Controls.Add(this.waleedPercent);
@@ -354,7 +354,7 @@
         private System.Windows.Forms.MaskedTextBox waleedPercent;
         private System.Windows.Forms.MaskedTextBox khaldounPercent;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox totalAmount;
         private System.Windows.Forms.Label label1;
     }
 }
