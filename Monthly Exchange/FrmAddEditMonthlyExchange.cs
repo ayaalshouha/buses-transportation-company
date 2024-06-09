@@ -29,6 +29,12 @@ namespace transportation_system.Monthly_Exchange
             backupValue.ReadOnly = true;
             salaryValue.ReadOnly = true;
         }
+        private void _ResetValues()
+        {
+            backupValue.ReadOnly = false;
+            salaryValue.ReadOnly = false;
+        }
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -91,6 +97,15 @@ namespace transportation_system.Monthly_Exchange
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             // check if already exist by month 
+            int month = dateTimePicker1.Value.Month;
+            if (monthlyExchange.isExist(month))
+            {
+                MessageBox.Show("الشهر المحدد موجود مسبقاً !! ", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                _ResetValues();
+            }
         }
     }
 }
