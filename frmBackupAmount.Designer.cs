@@ -61,12 +61,12 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(274, 196);
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(274, 193);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(100, 22);
+            this.lblDate.Size = new System.Drawing.Size(112, 25);
             this.lblDate.TabIndex = 3;
-            this.lblDate.Text = "30/11/1997";
+            this.lblDate.Text = "00/00/0000";
             // 
             // panel1
             // 
@@ -84,9 +84,9 @@
             this.lblMoney.ForeColor = System.Drawing.Color.Maroon;
             this.lblMoney.Location = new System.Drawing.Point(266, 125);
             this.lblMoney.Name = "lblMoney";
-            this.lblMoney.Size = new System.Drawing.Size(197, 37);
+            this.lblMoney.Size = new System.Drawing.Size(184, 37);
             this.lblMoney.TabIndex = 5;
-            this.lblMoney.Text = "10.000 JOD";
+            this.lblMoney.Text = "????? JOD";
             // 
             // btnOK
             // 
