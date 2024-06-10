@@ -64,6 +64,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBackupAmount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBackupAmount.Designer.cs">
+      <DependentUpon>frmBackupAmount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Monthly Exchange\FrmAddEditMonthlyExchange.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBackupAmount.resx">
+      <DependentUpon>frmBackupAmount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Monthly Exchange\FrmAddEditMonthlyExchange.resx">
       <DependentUpon>FrmAddEditMonthlyExchange.cs</DependentUpon>
@@ -136,6 +145,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6475889.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2460494.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

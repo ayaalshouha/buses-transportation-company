@@ -12,15 +12,15 @@ namespace buisness_layer
         private enum enMode { add, update }
         private enMode mode = enMode.add; 
         public int ID { get; set; }
-        public decimal TotalAmount { get; set; }
-        public decimal DailyRepair { get; set; }
-        public decimal WorkerPay { get; set; }
-        public decimal CompanyPay { get; set; }
+        public double TotalAmount { get; set; }
+        public double DailyRepair { get; set; }
+        public double WorkerPay { get; set; }
+        public double CompanyPay { get; set; }
         public int BusNumber { get; set; }
-        public decimal DailyFuel { get; set; }
+        public double DailyFuel { get; set; }
         public DateTime Date { get; set; }
-        public decimal MiscCost {  get; set; }
-        public decimal NetAmount
+        public double MiscCost {  get; set; }
+        public double NetAmount
         {
             get
             {

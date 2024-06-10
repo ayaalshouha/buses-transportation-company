@@ -48,9 +48,9 @@ namespace transportation_system.Monthly_Exchange
             {
                 monthlyExchange exchange = new monthlyExchange();
 
-                exchange.TotalAmount = decimal.Parse(totalAmount.Text);
-                exchange.BackupAmount = backupValue.Value;
-                exchange.WorkerSalary = salaryValue.Value;
+                exchange.TotalAmount = double.Parse(totalAmount.Text);
+                exchange.BackupAmount = ((double)backupValue.Value);
+                exchange.WorkerSalary = ((double)salaryValue.Value);
                 exchange.Date = dateTimePicker1.Value; 
                 
                 if (exchange.Save())

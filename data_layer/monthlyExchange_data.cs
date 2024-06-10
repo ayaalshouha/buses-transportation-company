@@ -34,9 +34,9 @@ namespace data_layer
                 {
                     isFound = true;
                     exchange.ID = (int)reader["ID"];
-                    exchange.TotalAmountPerMonth = (decimal)reader["total_amount"];
-                    exchange.BackupAmount = (decimal)reader["backup_amount"];
-                    exchange.WorkerSalary = (decimal)reader["worker_salary"];
+                    exchange.TotalAmountPerMonth = (double)reader["total_amount"];
+                    exchange.BackupAmount = (double)reader["backup_amount"];
+                    exchange.WorkerSalary = (double)reader["worker_salary"];
                     exchange.Date = (DateTime)reader["date_time"];
                 }
                 reader.Close();
@@ -179,9 +179,9 @@ namespace data_layer
             }
             return RowAffected > 0;
         }
-        public static decimal AkefPercentPerMonth(int exchangeID)
+        public static double AkefPercentPerMonth(int exchangeID)
         {
-            decimal req_percent = 0;
+            double req_percent = 0;
 
             SqlConnection Connection = new SqlConnection(DataSetting.ConnectionString);
 
@@ -198,7 +198,7 @@ namespace data_layer
 
                 object result = command.ExecuteScalar();
 
-                if (result != null && decimal.TryParse(result.ToString(), out decimal value))
+                if (result != null && double.TryParse(result.ToString(), out double value))
                 {
                     req_percent = value;
                 }
@@ -213,9 +213,9 @@ namespace data_layer
             }
             return req_percent;
         }
-        public static decimal WaleedPercentPerMonth(int exchangeID)
+        public static double WaleedPercentPerMonth(int exchangeID)
         {
-            decimal req_percent = 0;
+            double req_percent = 0;
 
             SqlConnection Connection = new SqlConnection(DataSetting.ConnectionString);
 
@@ -232,7 +232,7 @@ namespace data_layer
 
                 object result = command.ExecuteScalar();
 
-                if (result != null && decimal.TryParse(result.ToString(), out decimal value))
+                if (result != null && double.TryParse(result.ToString(), out double value))
                 {
                     req_percent = value;
                 }
@@ -247,9 +247,9 @@ namespace data_layer
             }
             return req_percent;
         }
-        public static decimal khaldounPercentPerMonth(int exchangeID)
+        public static double khaldounPercentPerMonth(int exchangeID)
         {
-            decimal req_percent = 0;
+            double req_percent = 0;
 
             SqlConnection Connection = new SqlConnection(DataSetting.ConnectionString);
 
@@ -266,7 +266,7 @@ namespace data_layer
 
                 object result = command.ExecuteScalar();
 
-                if (result != null && decimal.TryParse(result.ToString(), out decimal value))
+                if (result != null && double.TryParse(result.ToString(), out double value))
                 {
                     req_percent = value;
                 }
@@ -281,9 +281,9 @@ namespace data_layer
             }
             return req_percent;
         }
-        public static decimal getNetAmount(int exchangeID)
+        public static double getNetAmount(int exchangeID)
         {
-            decimal NetAmount = -1;
+            double NetAmount = -1;
             SqlConnection connection = new SqlConnection(DataSetting.ConnectionString);
             try
             {
@@ -296,7 +296,7 @@ namespace data_layer
                 connection.Open();
                 object result = command.ExecuteScalar();
 
-                if (result != null && decimal.TryParse(result.ToString(), out decimal netamount))
+                if (result != null && double.TryParse(result.ToString(), out double netamount))
                 {
                     NetAmount = netamount;
                 }
@@ -312,11 +312,11 @@ namespace data_layer
 
             return NetAmount;
         }
-        public static decimal getTotalPerMonth(int month, int year)
+        public static double getTotalPerMonth(int month, int year)
         {
-            
 
-            decimal totalAmount = -1;
+
+            double totalAmount = -1;
             SqlConnection connection = new SqlConnection(DataSetting.ConnectionString);
             try
             {
@@ -330,7 +330,7 @@ namespace data_layer
                 connection.Open();
                 object result = command.ExecuteScalar();
 
-                if (result != null && decimal.TryParse(result.ToString(), out decimal netamount))
+                if (result != null && double.TryParse(result.ToString(), out double netamount))
                 {
                     totalAmount = netamount;
                 }
@@ -347,5 +347,6 @@ namespace data_layer
             return totalAmount;
 
         }
+    
     }
 }

@@ -30,5 +30,11 @@ namespace transportation_system
             FrmAddEditMonthlyExchange frm = new FrmAddEditMonthlyExchange();
             frm.ShowDialog();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            frmBackupAmount frm = new frmBackupAmount();
+            frm.ShowDialog();
+        }
     }
 }

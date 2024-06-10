@@ -83,6 +83,26 @@ namespace transportation_system.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2460494 {
+            get {
+                object obj = ResourceManager.GetObject("2460494", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _6475889 {
+            get {
+                object obj = ResourceManager.GetObject("6475889", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow_left__3_ {
             get {
                 object obj = ResourceManager.GetObject("arrow_left (3)", resourceCulture);
@@ -97,6 +117,16 @@ namespace transportation_system.Properties {
             get {
                 object obj = ResourceManager.GetObject("bus-icon-public-transport-bus-marker-for-map-public-transportation-transit-round-" +
                         "icon-bus-pictogram-illustration-vector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap money {
+            get {
+                object obj = ResourceManager.GetObject("money", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

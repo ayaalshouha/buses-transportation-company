@@ -9,9 +9,9 @@ namespace data_layer
 {
     public class total_data
     {
-        public static decimal getTotalOf_PerMonth(enSection section, int month, int year, int busNumber)
+        public static double getTotalOf_PerMonth(enSection section, int month, int year, int busNumber)
         {
-            decimal total = -1;
+            double total = -1;
 
             var columnMapping = new Dictionary<enSection, string>
             {
@@ -45,7 +45,7 @@ namespace data_layer
                 command.Parameters.AddWithValue("@busnumber", busNumber);
 
                 object result = command.ExecuteScalar();
-                if (result != null && decimal.TryParse(result.ToString(), out decimal value))
+                if (result != null && double.TryParse(result.ToString(), out double value))
                 {
                     total = value;
                 }
@@ -61,10 +61,9 @@ namespace data_layer
 
             return total;
         }
-
-        public static decimal TotalBackupAmount()
+        public static double TotalBackupAmount()
         {
-            decimal total_backup = 0;
+            double total_backup = 0;
             SqlConnection Connection = new SqlConnection(DataSetting.ConnectionString);
             try
             {
@@ -74,7 +73,7 @@ namespace data_layer
                 SqlCommand command = new SqlCommand(Query, Connection);
 
                 object result = command.ExecuteScalar();
-                if (result != null && decimal.TryParse(result.ToString(), out decimal value))
+                if (result != null && double.TryParse(result.ToString(), out double value))
                 {
                     total_backup = value;
                 }
@@ -90,7 +89,5 @@ namespace data_layer
             }
             return total_backup;
         }
-   
-        
     }
 }

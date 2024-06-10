@@ -31,15 +31,15 @@ namespace data_layer
                 {
                     isFound = true;
                     exchange.ID = (int)reader["ID"];
-                    exchange.TotalAmount = (decimal)reader["total_amount"];
-                    exchange.DailyRepair = (decimal)reader["daily_repair"];
-                    exchange.WorkerPay = (decimal)reader["worker_pay"];
-                    exchange.CompanyPay = (decimal)reader["company_pay"];
-                    exchange.DailyFuel = (decimal)reader["daily_fuel"];
+                    exchange.TotalAmount = (double)reader["total_amount"];
+                    exchange.DailyRepair = (double)reader["daily_repair"];
+                    exchange.WorkerPay = (double)reader["worker_pay"];
+                    exchange.CompanyPay = (double)reader["company_pay"];
+                    exchange.DailyFuel = (double)reader["daily_fuel"];
                     exchange.BusNumber = (int)reader["bus_number"];
                     exchange.Date = (DateTime)reader["date_time"];
                     //exchange.NetAmount = (decimal)reader["net_amount"]; 
-                    exchange.MiscCost = (decimal)reader["misc_cost"]; 
+                    exchange.MiscCost = (double)reader["misc_cost"]; 
                 }
                 reader.Close();
 
@@ -54,7 +54,6 @@ namespace data_layer
             }
             return isFound;
         }
-
         public static int Add(stDailyExchange exchange)
         {
             int newID = -1;
@@ -106,7 +105,6 @@ namespace data_layer
 
             return newID;
         }
-
         public static bool Update(stDailyExchange exchange)
         {
             int RowAffected = 0;
@@ -151,9 +149,9 @@ namespace data_layer
 
             return RowAffected > 0;
         }
-        public static decimal getNetAmount(int exchangeID)
+        public static double getNetAmount(int exchangeID)
         {
-            decimal NetAmount = -1; 
+            double NetAmount = -1; 
             SqlConnection connection = new SqlConnection(DataSetting.ConnectionString);
             try
             {
@@ -166,7 +164,7 @@ namespace data_layer
                 connection.Open();
                 object result = command.ExecuteScalar();
 
-                if(result != null && decimal.TryParse(result.ToString(), out decimal netamount))
+                if(result != null && double.TryParse(result.ToString(), out double netamount))
                 {
                     NetAmount = netamount;
                 }
@@ -182,7 +180,6 @@ namespace data_layer
 
             return NetAmount;
         }
-
         public static bool isExist_byDateAndBusNumber(DateTime date, int Busnumber)
         {
             bool isFound = false;
@@ -208,8 +205,7 @@ namespace data_layer
                 Connection.Close();
             }
             return isFound;
-        }
-        
+        }    
         public static bool Delete(int ExchangeID)
         {
             int RowAffected = -1;

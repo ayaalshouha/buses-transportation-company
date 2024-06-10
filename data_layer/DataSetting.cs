@@ -12,27 +12,26 @@ namespace data_layer
     public struct stDailyExchange
     {
         public int ID {  get; set; }
-        public decimal TotalAmount { get; set; }
-        public decimal DailyRepair {  get; set; }
-        public decimal WorkerPay { get; set; }
-        public decimal CompanyPay { get; set; }
+        public double TotalAmount { get; set; }
+        public double DailyRepair {  get; set; }
+        public double WorkerPay { get; set; }
+        public double CompanyPay { get; set; }
         public int BusNumber { get; set; }
-        public decimal DailyFuel { get; set; }
+        public double DailyFuel { get; set; }
         public DateTime Date { get; set; }
         //public decimal NetAmount { get; set; }
 
-        public decimal MiscCost {  get; set; }
+        public double MiscCost {  get; set; }
     }
     public struct stMonthlyExchange
     {
         public int ID { get; set; }
         public DateTime Date { get; set; }
-        public decimal TotalAmountPerMonth { get; set; }
-        public decimal WorkerSalary {  get; set; }
-        public decimal BackupAmount { get; set; }
+        public double TotalAmountPerMonth { get; set; }
+        public double WorkerSalary {  get; set; }
+        public double BackupAmount { get; set; }
       
     }
-
     public class DataSetting
     {
         public static string ConnectionString = "server=.; database=Alshouha_Company; user id=sa; password=sa123456;";

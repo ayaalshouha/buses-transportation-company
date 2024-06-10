@@ -12,12 +12,12 @@ namespace buisness_layer
     {
 
         //calculate total paid for certain section by month and bus number
-       public static decimal TotalPerSectionAndBusNum(enSection section, int month, int year, int busNumber)
+       public static double TotalPerSectionAndBusNum(enSection section, int month, int year, int busNumber)
        {
             return total_data.getTotalOf_PerMonth(section, month, year, busNumber); 
        }
     
-        public static decimal TotalBackupAccount()
+        public static double TotalBackupAccount()
         {
             return total_data.TotalBackupAmount();
         }

@@ -54,14 +54,14 @@ namespace transportation_system.Daily_Exchange
             if(MessageBox.Show("هل انت متأكد انك تريد الحفظ؟", "Message Box", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 dailyExchange exchange = new dailyExchange();
-                exchange.TotalAmount = totalValue.Value;
-                exchange.DailyFuel = FuelValue.Value;
-                exchange.DailyRepair = repairValue.Value;
-                exchange.WorkerPay = workerPayValue.Value;
-                exchange.CompanyPay = companyPayValue.Value;
+                exchange.TotalAmount = ((double)totalValue.Value);
+                exchange.DailyFuel = ((double)FuelValue.Value);
+                exchange.DailyRepair = ((double)repairValue.Value);
+                exchange.WorkerPay = ((double)workerPayValue.Value);
+                exchange.CompanyPay = ((double)companyPayValue.Value);
                 exchange.BusNumber = rdBusOne.Checked ? 1 : 2;
                 exchange.Date = dateTimePicker1.Value;
-                exchange.MiscCost = miscValue.Value; 
+                exchange.MiscCost = ((double)miscValue.Value); 
 
                 if (exchange.Save())
                 {

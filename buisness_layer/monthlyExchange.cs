@@ -14,32 +14,32 @@ namespace buisness_layer
         private enum enMode { add, update }
         private enMode mode = enMode.add; 
         public int ID { get; set; }
-        public decimal TotalAmount { get; set; }
-        public decimal WorkerSalary { get; set; }
-        public decimal BackupAmount { get; set; }
+        public double TotalAmount { get; set; }
+        public double WorkerSalary { get; set; }
+        public double BackupAmount { get; set; }
         public DateTime Date { get; set; }
-        public decimal NetAmount 
+        public double NetAmount 
         {
             get
             {
                 return monthlyExchange_data.getNetAmount(this.ID);
             }
         }
-        public decimal AkefPercent
+        public double AkefPercent
         {
             get
             {
                 return monthlyExchange_data.AkefPercentPerMonth(this.ID); 
             }
         }
-        public decimal khaldounPercent
+        public double khaldounPercent
         {
             get
             {
                 return monthlyExchange_data.khaldounPercentPerMonth(this.ID);
             }
         }
-        public decimal WaleedPercent { 
+        public double WaleedPercent { 
             get 
             {
                 return monthlyExchange_data.WaleedPercentPerMonth(this.ID);
@@ -127,7 +127,7 @@ namespace buisness_layer
         {
             return dailyExchange_data.Delete(this.ID);
         }
-        public static decimal TotalAmountPerMonth(DateTime date)
+        public static double TotalAmountPerMonth(DateTime date)
         {
             return monthlyExchange_data.getTotalPerMonth(date.Month, date.Year); 
         }
