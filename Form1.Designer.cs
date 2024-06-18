@@ -195,6 +195,8 @@
             this.Controls.Add(this.btnAddDailyExchange);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Shouha Transportation System";
             this.panel1.ResumeLayout(false);

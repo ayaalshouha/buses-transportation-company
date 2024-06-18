@@ -46,12 +46,12 @@ namespace transportation_system.Daily_Exchange
             {
                 if(dailyExchange.isExist(date, busnumber))
                 {
-                    MessageBox.Show($"الصرف اليومي للباص {busnumber} موجود مسبقا ", "message box", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"الصرف اليومي للباص {busnumber} موجود مسبقا ", "message box", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                     return; 
                 }
             }
 
-            if(MessageBox.Show("هل انت متأكد انك تريد الحفظ؟", "Message Box", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if(MessageBox.Show("هل انت متأكد انك تريد الحفظ؟", "Message Box", MessageBoxButtons.YesNo, MessageBoxIcon.Question,MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
             {
                 dailyExchange exchange = new dailyExchange();
                 exchange.TotalAmount = ((double)totalValue.Value);
@@ -65,7 +65,7 @@ namespace transportation_system.Daily_Exchange
 
                 if (exchange.Save())
                 {
-                    MessageBox.Show("تم حفظ البيانات بنجاح.", "Message Box", MessageBoxButtons.OK,MessageBoxIcon.Information );
+                    MessageBox.Show("تم حفظ البيانات بنجاح.", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                     txtNetAmount.Visible = true;
                     lblNetAmount.Visible = true; 
                     txtNetAmount.Text = exchange.NetAmount.ToString();
@@ -73,12 +73,12 @@ namespace transportation_system.Daily_Exchange
                 }
                 else
                 {
-                    MessageBox.Show("حدث خطأ ما، يرجى المحاولة مرة أخرى لاحقاً.", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("حدث خطأ ما، يرجى المحاولة مرة أخرى لاحقاً.", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                 }
             }
             else
             {
-                MessageBox.Show("تم الغاء العملية", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("تم الغاء العملية", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
             }
         }
     }

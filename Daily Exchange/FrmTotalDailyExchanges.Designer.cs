@@ -52,7 +52,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1682, 577);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            //this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -68,7 +67,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(1580, 680);
+            this.btnClose.Location = new System.Drawing.Point(1575, 676);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(123, 55);
             this.btnClose.TabIndex = 3;
@@ -80,7 +79,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 695);
+            this.label2.Location = new System.Drawing.Point(12, 676);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(169, 26);
             this.label2.TabIndex = 4;
@@ -90,7 +89,7 @@
             // 
             this.lblRecords.AutoSize = true;
             this.lblRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecords.Location = new System.Drawing.Point(202, 695);
+            this.lblRecords.Location = new System.Drawing.Point(187, 676);
             this.lblRecords.Name = "lblRecords";
             this.lblRecords.Size = new System.Drawing.Size(72, 26);
             this.lblRecords.TabIndex = 5;
@@ -110,6 +109,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmTotalDailyExchanges";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTotalDailyExchanges";
             this.Load += new System.EventHandler(this.FrmTotalDailyExchanges_Load);

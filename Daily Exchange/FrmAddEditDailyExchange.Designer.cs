@@ -63,7 +63,7 @@
             // 
             this.mainlbl.AutoSize = true;
             this.mainlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainlbl.Location = new System.Drawing.Point(423, 29);
+            this.mainlbl.Location = new System.Drawing.Point(423, 8);
             this.mainlbl.Name = "mainlbl";
             this.mainlbl.Size = new System.Drawing.Size(273, 46);
             this.mainlbl.TabIndex = 0;
@@ -73,7 +73,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(60, 511);
+            this.btnSave.Location = new System.Drawing.Point(909, 515);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(164, 65);
             this.btnSave.TabIndex = 1;
@@ -85,7 +85,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(869, 130);
+            this.label1.Location = new System.Drawing.Point(47, 126);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(214, 37);
@@ -96,7 +96,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(896, 193);
+            this.label2.Location = new System.Drawing.Point(47, 189);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(187, 37);
@@ -107,7 +107,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(862, 256);
+            this.label3.Location = new System.Drawing.Point(47, 252);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label3.Size = new System.Drawing.Size(221, 37);
@@ -118,7 +118,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(925, 319);
+            this.label4.Location = new System.Drawing.Point(47, 315);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(158, 37);
@@ -129,7 +129,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(916, 382);
+            this.label5.Location = new System.Drawing.Point(47, 378);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(167, 37);
@@ -140,7 +140,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(938, 490);
+            this.label6.Location = new System.Drawing.Point(47, 486);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label6.Size = new System.Drawing.Size(145, 37);
@@ -152,7 +152,7 @@
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(579, 556);
+            this.dateTimePicker1.Location = new System.Drawing.Point(263, 545);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(180, 30);
             this.dateTimePicker1.TabIndex = 8;
@@ -162,7 +162,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(977, 549);
+            this.label7.Location = new System.Drawing.Point(47, 545);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(106, 37);
@@ -174,7 +174,7 @@
             this.rdBusOne.AutoSize = true;
             this.rdBusOne.Checked = true;
             this.rdBusOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBusOne.Location = new System.Drawing.Point(681, 494);
+            this.rdBusOne.Location = new System.Drawing.Point(365, 483);
             this.rdBusOne.Name = "rdBusOne";
             this.rdBusOne.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.rdBusOne.Size = new System.Drawing.Size(78, 33);
@@ -187,7 +187,7 @@
             // 
             this.rdBusTwo.AutoSize = true;
             this.rdBusTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBusTwo.Location = new System.Drawing.Point(590, 494);
+            this.rdBusTwo.Location = new System.Drawing.Point(274, 483);
             this.rdBusTwo.Name = "rdBusTwo";
             this.rdBusTwo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.rdBusTwo.Size = new System.Drawing.Size(80, 33);
@@ -200,18 +200,18 @@
             this.lblNetAmount.AutoSize = true;
             this.lblNetAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNetAmount.ForeColor = System.Drawing.Color.Maroon;
-            this.lblNetAmount.Location = new System.Drawing.Point(232, 112);
+            this.lblNetAmount.Location = new System.Drawing.Point(723, 114);
             this.lblNetAmount.Name = "lblNetAmount";
             this.lblNetAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblNetAmount.Size = new System.Drawing.Size(178, 37);
+            this.lblNetAmount.Size = new System.Drawing.Size(154, 37);
             this.lblNetAmount.TabIndex = 17;
-            this.lblNetAmount.Text = "**صافي المبلغ:";
+            this.lblNetAmount.Text = "صافي المبلغ:";
             // 
             // txtNetAmount
             // 
             this.txtNetAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNetAmount.ForeColor = System.Drawing.Color.Maroon;
-            this.txtNetAmount.Location = new System.Drawing.Point(60, 119);
+            this.txtNetAmount.Location = new System.Drawing.Point(945, 120);
             this.txtNetAmount.Mask = "00000";
             this.txtNetAmount.Name = "txtNetAmount";
             this.txtNetAmount.ReadOnly = true;
@@ -222,7 +222,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::transportation_system.Properties.Resources._1;
-            this.pictureBox1.Location = new System.Drawing.Point(60, 214);
+            this.pictureBox1.Location = new System.Drawing.Point(730, 215);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(343, 239);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -232,7 +232,7 @@
             // totalValue
             // 
             this.totalValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalValue.Location = new System.Drawing.Point(639, 137);
+            this.totalValue.Location = new System.Drawing.Point(323, 126);
             this.totalValue.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -245,7 +245,7 @@
             // FuelValue
             // 
             this.FuelValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FuelValue.Location = new System.Drawing.Point(639, 200);
+            this.FuelValue.Location = new System.Drawing.Point(323, 189);
             this.FuelValue.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -258,7 +258,7 @@
             // repairValue
             // 
             this.repairValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.repairValue.Location = new System.Drawing.Point(639, 263);
+            this.repairValue.Location = new System.Drawing.Point(323, 252);
             this.repairValue.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -271,7 +271,7 @@
             // workerPayValue
             // 
             this.workerPayValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.workerPayValue.Location = new System.Drawing.Point(639, 326);
+            this.workerPayValue.Location = new System.Drawing.Point(323, 315);
             this.workerPayValue.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -284,7 +284,7 @@
             // companyPayValue
             // 
             this.companyPayValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.companyPayValue.Location = new System.Drawing.Point(639, 389);
+            this.companyPayValue.Location = new System.Drawing.Point(323, 378);
             this.companyPayValue.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -297,7 +297,7 @@
             // miscValue
             // 
             this.miscValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.miscValue.Location = new System.Drawing.Point(639, 447);
+            this.miscValue.Location = new System.Drawing.Point(323, 436);
             this.miscValue.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -311,7 +311,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(925, 440);
+            this.label8.Location = new System.Drawing.Point(47, 436);
             this.label8.Name = "label8";
             this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label8.Size = new System.Drawing.Size(164, 37);
@@ -348,8 +348,10 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.mainlbl);
             this.Name = "FrmAddEditDailyExchange";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAddDailyExchange";
+            this.Text = "اضافة صرف يومي";
             this.Load += new System.EventHandler(this.FrmAddEditDailyExchange_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.totalValue)).EndInit();
