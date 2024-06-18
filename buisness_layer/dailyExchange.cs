@@ -134,7 +134,7 @@ namespace buisness_layer
         }
         public static DataTable DailyExchangeData()
         {
-            return dailyExchange_data.getAllDailyExchange();
+            return dailyExchange_data.getAllExchanges();
         }
     }
 }

@@ -84,7 +84,11 @@ namespace data_layer
                 Command.Parameters.AddWithValue("@dailyfuel", exchange.DailyFuel);
                 Command.Parameters.AddWithValue("@busnumber", exchange.BusNumber);
                 Command.Parameters.AddWithValue("@datetime", exchange.Date);
-                Command.Parameters.AddWithValue("@misccost", exchange.MiscCost);
+
+                if (exchange.MiscCost == -1)
+                    Command.Parameters.AddWithValue("@misccost", 0);
+                else
+                    Command.Parameters.AddWithValue("@misccost", exchange.MiscCost); 
 
                 Connection.Open();
                 object result = Command.ExecuteScalar();
@@ -262,7 +266,6 @@ namespace data_layer
             }
             return RowAffected > 0;
         }
-
         public static DataTable getAllExchanges()
         {
             DataTable dt = new DataTable();
