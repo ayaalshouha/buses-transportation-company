@@ -11,6 +11,47 @@ namespace data_layer
 {
     public static class dailyExchange_data
     {
+        public static bool getExchange(int ExchID, ref stDailyExchange exchange)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(DataSetting.ConnectionString);
+            try
+            {
+                string Query = @"SELECT * FROM daily_exchange
+                                 WHERE ID = @ExchID;";
+
+                SqlCommand command = new SqlCommand(Query, connection);
+                command.Parameters.AddWithValue("@ExchID", ExchID);
+
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    isFound = true;
+                    exchange.ID = (int)reader["ID"];
+                    exchange.TotalAmount = (double)reader["total_amount"];
+                    exchange.DailyRepair = (double)reader["daily_repair"];
+                    exchange.WorkerPay = (double)reader["worker_pay"];
+                    exchange.CompanyPay = (double)reader["company_pay"];
+                    exchange.DailyFuel = (double)reader["daily_fuel"];
+                    exchange.BusNumber = (int)reader["bus_number"];
+                    exchange.Date = (DateTime)reader["date_time"];
+                    exchange.MiscCost = (double)reader["misc_cost"];
+                }
+                reader.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+        }
         public static bool getExchangeByDate_BusNumber(DateTime date, int busNumber, ref stDailyExchange exchange)
         {
             bool isFound = false;

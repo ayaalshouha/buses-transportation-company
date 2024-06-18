@@ -29,7 +29,8 @@ namespace transportation_system.Daily_Exchange
             dataGridView1.Columns[6].HeaderText = "صافي المبلغ";
             dataGridView1.Columns[7].HeaderText = "رقم الباص";
             dataGridView1.Columns[8].HeaderText = "التاريخ";
-            dataGridView1.Columns[9].HeaderText = " اضافية نفقات";
+            dataGridView1.Columns[9].HeaderText = "نفقات اضافية";
+
         }
         private void _AddEditDeleteButtons()
         {
@@ -45,7 +46,7 @@ namespace transportation_system.Daily_Exchange
                 HeaderText = "حذف",
                 Text = "حذف",
                 UseColumnTextForButtonValue = true,
-                Name = "Delete"
+                Name = "Delete",
             };
             dataGridView1.Columns.Add(editButton);
             dataGridView1.Columns.Add(deleteButton);
@@ -62,6 +63,36 @@ namespace transportation_system.Daily_Exchange
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string ColumnName = dataGridView1.Columns[e.ColumnIndex].Name;
+            int ExchangeID = (int)dataGridView1["ID", e.RowIndex].Value;
+
+            if (ColumnName == "تعديل")
+            {
+                //edit coode
+                FrmAddEditDailyExchange frm = new FrmAddEditDailyExchange(ExchangeID);
+                frm.ShowDialog();
+            }
+            else if (ColumnName == "حذف")
+            {
+                //delete code
+                if(MessageBox.Show("", "Message Box", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (dailyExchange.Find(ExchangeID))
+                    {
+
+                    }
+                    
+                } 
+            }
         }
     }
 }

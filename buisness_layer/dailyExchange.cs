@@ -56,6 +56,14 @@ namespace buisness_layer
             this.mode = enMode.add;
         }
 
+        public static dailyExchange Find(int ID)
+        {
+            stDailyExchange exchange = new stDailyExchange();
+            if (dailyExchange_data.getExchange(ID, ref exchange))
+                return new dailyExchange(exchange);
+            else
+                return null;
+        }
         public static dailyExchange Find(DateTime date, int BusNumber)
         {   
             stDailyExchange exchange = new stDailyExchange();
@@ -64,7 +72,6 @@ namespace buisness_layer
             else
                 return null;
         }
-
         private bool _Add()
         {
             stDailyExchange exchange = new stDailyExchange
@@ -82,7 +89,6 @@ namespace buisness_layer
             this.ID = dailyExchange_data.Add(exchange);
             return this.ID != -1; 
         }
-
         private bool _Update()
         {
             stDailyExchange exchange = new stDailyExchange
@@ -117,13 +123,10 @@ namespace buisness_layer
 
             return false;
         }
-
         public static bool isExist(DateTime date, int BusNumber)
         {
             return dailyExchange_data.isExist_byDateAndBusNumber(date, BusNumber);
         }
-
-
         public bool Delete()
         {
             return dailyExchange_data.Delete(this.ID);
