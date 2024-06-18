@@ -36,5 +36,17 @@ namespace transportation_system
             frmBackupAmount frm = new frmBackupAmount();
             frm.ShowDialog();
         }
+
+        private void DailyExchangeData_Click(object sender, EventArgs e)
+        {
+            FrmTotalDailyExchanges frm = new FrmTotalDailyExchanges();
+            frm.ShowDialog();
+        }
+
+        private void btnMonthlyExchangeData_Click(object sender, EventArgs e)
+        {
+            FrmTotalMonthlyExchanges frm = new FrmTotalMonthlyExchanges();
+            frm.ShowDialog();
+        }
     }
 }
