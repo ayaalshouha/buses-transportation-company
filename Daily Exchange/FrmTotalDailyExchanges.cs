@@ -16,5 +16,10 @@ namespace transportation_system.Daily_Exchange
         {
             InitializeComponent();
         }
+
+        private void FrmTotalDailyExchanges_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

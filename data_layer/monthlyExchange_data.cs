@@ -347,6 +347,34 @@ namespace data_layer
             return totalAmount;
 
         }
-    
+
+        public static DataTable getAllExchanges()
+        {
+            DataTable dt = new DataTable();
+            SqlConnection Connection = new SqlConnection(DataSetting.ConnectionString);
+            try
+            {
+                string Query = @"SELECT * FROM monthly_exchange;";
+
+                SqlCommand command = new SqlCommand(Query, Connection);
+
+                Connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    dt.Load(reader);
+                }
+            }
+            catch (Exception ex)
+            {
+                //DataSettings.StoreUsingEventLogs(ex.Message.ToString());
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return dt;
+        }
     }
 }

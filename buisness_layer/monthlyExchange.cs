@@ -1,6 +1,7 @@
 ﻿using data_layer;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
@@ -130,6 +131,11 @@ namespace buisness_layer
         public static double TotalAmountPerMonth(DateTime date)
         {
             return monthlyExchange_data.getTotalPerMonth(date.Month, date.Year); 
+        }
+
+        public static DataTable MonthlyExchangeData()
+        {
+            return monthlyExchange_data.getAllExchanges();
         }
     }
 }

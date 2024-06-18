@@ -87,6 +87,9 @@
     <EmbeddedResource Include="Daily Exchange\FrmAddEditDailyExchange.resx">
       <DependentUpon>FrmAddEditDailyExchange.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Daily Exchange\FrmTotalDailyExchanges.resx">
+      <DependentUpon>FrmTotalDailyExchanges.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

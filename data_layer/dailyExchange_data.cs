@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -262,5 +263,33 @@ namespace data_layer
             return RowAffected > 0;
         }
 
+        public static DataTable getAllExchanges()
+        {
+            DataTable dt = new DataTable();
+            SqlConnection Connection = new SqlConnection(DataSetting.ConnectionString);
+            try
+            {
+                string Query = @"SELECT * FROM daily_exchange;";
+
+                SqlCommand command = new SqlCommand(Query, Connection);
+
+                Connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    dt.Load(reader);
+                }
+            }
+            catch (Exception ex)
+            {
+                //DataSettings.StoreUsingEventLogs(ex.Message.ToString());
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return dt;
+        }
     }
 }

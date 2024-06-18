@@ -1,6 +1,7 @@
 ﻿using data_layer;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -130,6 +131,10 @@ namespace buisness_layer
         public bool Delete_ByDateAndBus()
         {
             return dailyExchange_data.Delete_byDateAndBusNumber(this.Date, this.BusNumber); ;
+        }
+        public static DataTable DailyExchangeData()
+        {
+            return dailyExchange_data.getAllDailyExchange();
         }
     }
 }
