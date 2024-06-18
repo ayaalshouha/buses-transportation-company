@@ -17,8 +17,7 @@ namespace data_layer
             SqlConnection connection = new SqlConnection(DataSetting.ConnectionString);
             try
             {
-                string Query = @"SELECT * FROM daily_exchange
-                                 WHERE ID = @ExchID;";
+                string Query = "SELECT * FROM daily_exchange WHERE ID = @ExchID;";
 
                 SqlCommand command = new SqlCommand(Query, connection);
                 command.Parameters.AddWithValue("@ExchID", ExchID);
@@ -30,14 +29,14 @@ namespace data_layer
                 {
                     isFound = true;
                     exchange.ID = (int)reader["ID"];
-                    exchange.TotalAmount = (double)reader["total_amount"];
-                    exchange.DailyRepair = (double)reader["daily_repair"];
-                    exchange.WorkerPay = (double)reader["worker_pay"];
-                    exchange.CompanyPay = (double)reader["company_pay"];
-                    exchange.DailyFuel = (double)reader["daily_fuel"];
+                    exchange.TotalAmount = Convert.ToDouble(reader["total_amount"]); 
+                    exchange.DailyRepair = Convert.ToDouble(reader["daily_repair"]);
+                    exchange.WorkerPay = Convert.ToDouble(reader["worker_pay"]);
+                    exchange.CompanyPay = Convert.ToDouble(reader["company_pay"]);
+                    exchange.DailyFuel = Convert.ToDouble(reader["daily_fuel"]);
                     exchange.BusNumber = (int)reader["bus_number"];
                     exchange.Date = (DateTime)reader["date_time"];
-                    exchange.MiscCost = (double)reader["misc_cost"];
+                    exchange.MiscCost = Convert.ToDouble(reader["misc_cost"]);
                 }
                 reader.Close();
 
@@ -73,15 +72,14 @@ namespace data_layer
                 {
                     isFound = true;
                     exchange.ID = (int)reader["ID"];
-                    exchange.TotalAmount = (double)reader["total_amount"];
-                    exchange.DailyRepair = (double)reader["daily_repair"];
-                    exchange.WorkerPay = (double)reader["worker_pay"];
-                    exchange.CompanyPay = (double)reader["company_pay"];
-                    exchange.DailyFuel = (double)reader["daily_fuel"];
+                    exchange.TotalAmount = Convert.ToDouble(reader["total_amount"]);
+                    exchange.DailyRepair = Convert.ToDouble(reader["daily_repair"]);
+                    exchange.WorkerPay = Convert.ToDouble(reader["worker_pay"]);
+                    exchange.CompanyPay = Convert.ToDouble(reader["company_pay"]);
+                    exchange.DailyFuel = Convert.ToDouble(reader["daily_fuel"]);
                     exchange.BusNumber = (int)reader["bus_number"];
                     exchange.Date = (DateTime)reader["date_time"];
-                    //exchange.NetAmount = (decimal)reader["net_amount"]; 
-                    exchange.MiscCost = (double)reader["misc_cost"]; 
+                    exchange.MiscCost = Convert.ToDouble(reader["misc_cost"]); 
                 }
                 reader.Close();
 
@@ -165,7 +163,7 @@ namespace data_layer
                         daily_fuel = @dailyfuel, 
                         bus_number = @busnumber,
                         date_time = @datetime,
-                        misc_cost = @misccost,
+                        misc_cost = @misccost
                         WHERE ID = @exchangeID;";
 
 

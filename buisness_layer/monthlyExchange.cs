@@ -65,7 +65,14 @@ namespace buisness_layer
             this.WorkerSalary = -1;
             this.mode = enMode.add; 
         }
-
+        public static monthlyExchange Find(int exchID)
+        {
+            stMonthlyExchange exchange = new stMonthlyExchange();
+            if (monthlyExchange_data.getExchange(exchID, ref exchange))
+                return new monthlyExchange(exchange);
+            else
+                return null;
+        }
         public static monthlyExchange Find(int month, int year )
         {
             stMonthlyExchange exchange = new stMonthlyExchange();

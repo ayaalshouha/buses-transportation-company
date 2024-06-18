@@ -43,27 +43,22 @@
             this.lblNetAmount = new System.Windows.Forms.Label();
             this.txtNetAmount = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.totalValue = new System.Windows.Forms.NumericUpDown();
-            this.FuelValue = new System.Windows.Forms.NumericUpDown();
-            this.repairValue = new System.Windows.Forms.NumericUpDown();
-            this.workerPayValue = new System.Windows.Forms.NumericUpDown();
-            this.companyPayValue = new System.Windows.Forms.NumericUpDown();
-            this.miscValue = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
+            this.totalAmount = new System.Windows.Forms.MaskedTextBox();
+            this.fuelValue = new System.Windows.Forms.MaskedTextBox();
+            this.repairValue = new System.Windows.Forms.MaskedTextBox();
+            this.workerPayValue = new System.Windows.Forms.MaskedTextBox();
+            this.companyValue = new System.Windows.Forms.MaskedTextBox();
+            this.miscCostValue = new System.Windows.Forms.MaskedTextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.totalValue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FuelValue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repairValue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workerPayValue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyPayValue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.miscValue)).BeginInit();
             this.SuspendLayout();
             // 
             // mainlbl
             // 
             this.mainlbl.AutoSize = true;
             this.mainlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainlbl.Location = new System.Drawing.Point(423, 8);
+            this.mainlbl.Location = new System.Drawing.Point(423, 19);
             this.mainlbl.Name = "mainlbl";
             this.mainlbl.Size = new System.Drawing.Size(273, 46);
             this.mainlbl.TabIndex = 0;
@@ -96,7 +91,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(47, 189);
+            this.label2.Location = new System.Drawing.Point(47, 185);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(187, 37);
@@ -107,7 +102,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(47, 252);
+            this.label3.Location = new System.Drawing.Point(47, 244);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label3.Size = new System.Drawing.Size(221, 37);
@@ -118,7 +113,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(47, 315);
+            this.label4.Location = new System.Drawing.Point(47, 303);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(158, 37);
@@ -129,7 +124,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(47, 378);
+            this.label5.Location = new System.Drawing.Point(47, 362);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(167, 37);
@@ -140,7 +135,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(47, 486);
+            this.label6.Location = new System.Drawing.Point(47, 480);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label6.Size = new System.Drawing.Size(145, 37);
@@ -152,7 +147,7 @@
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(263, 545);
+            this.dateTimePicker1.Location = new System.Drawing.Point(323, 542);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(180, 30);
             this.dateTimePicker1.TabIndex = 8;
@@ -162,7 +157,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(47, 545);
+            this.label7.Location = new System.Drawing.Point(47, 539);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(106, 37);
@@ -174,7 +169,7 @@
             this.rdBusOne.AutoSize = true;
             this.rdBusOne.Checked = true;
             this.rdBusOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBusOne.Location = new System.Drawing.Point(365, 483);
+            this.rdBusOne.Location = new System.Drawing.Point(322, 486);
             this.rdBusOne.Name = "rdBusOne";
             this.rdBusOne.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.rdBusOne.Size = new System.Drawing.Size(78, 33);
@@ -187,7 +182,7 @@
             // 
             this.rdBusTwo.AutoSize = true;
             this.rdBusTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBusTwo.Location = new System.Drawing.Point(274, 483);
+            this.rdBusTwo.Location = new System.Drawing.Point(406, 486);
             this.rdBusTwo.Name = "rdBusTwo";
             this.rdBusTwo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.rdBusTwo.Size = new System.Drawing.Size(80, 33);
@@ -200,7 +195,7 @@
             this.lblNetAmount.AutoSize = true;
             this.lblNetAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNetAmount.ForeColor = System.Drawing.Color.Maroon;
-            this.lblNetAmount.Location = new System.Drawing.Point(723, 114);
+            this.lblNetAmount.Location = new System.Drawing.Point(723, 132);
             this.lblNetAmount.Name = "lblNetAmount";
             this.lblNetAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblNetAmount.Size = new System.Drawing.Size(154, 37);
@@ -211,7 +206,7 @@
             // 
             this.txtNetAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNetAmount.ForeColor = System.Drawing.Color.Maroon;
-            this.txtNetAmount.Location = new System.Drawing.Point(945, 120);
+            this.txtNetAmount.Location = new System.Drawing.Point(909, 138);
             this.txtNetAmount.Mask = "00000";
             this.txtNetAmount.Name = "txtNetAmount";
             this.txtNetAmount.ReadOnly = true;
@@ -229,94 +224,80 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
-            // totalValue
-            // 
-            this.totalValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalValue.Location = new System.Drawing.Point(323, 126);
-            this.totalValue.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.totalValue.Name = "totalValue";
-            this.totalValue.Size = new System.Drawing.Size(120, 30);
-            this.totalValue.TabIndex = 20;
-            // 
-            // FuelValue
-            // 
-            this.FuelValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FuelValue.Location = new System.Drawing.Point(323, 189);
-            this.FuelValue.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.FuelValue.Name = "FuelValue";
-            this.FuelValue.Size = new System.Drawing.Size(120, 30);
-            this.FuelValue.TabIndex = 21;
-            // 
-            // repairValue
-            // 
-            this.repairValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.repairValue.Location = new System.Drawing.Point(323, 252);
-            this.repairValue.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.repairValue.Name = "repairValue";
-            this.repairValue.Size = new System.Drawing.Size(120, 30);
-            this.repairValue.TabIndex = 22;
-            // 
-            // workerPayValue
-            // 
-            this.workerPayValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.workerPayValue.Location = new System.Drawing.Point(323, 315);
-            this.workerPayValue.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.workerPayValue.Name = "workerPayValue";
-            this.workerPayValue.Size = new System.Drawing.Size(120, 30);
-            this.workerPayValue.TabIndex = 23;
-            // 
-            // companyPayValue
-            // 
-            this.companyPayValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.companyPayValue.Location = new System.Drawing.Point(323, 378);
-            this.companyPayValue.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.companyPayValue.Name = "companyPayValue";
-            this.companyPayValue.Size = new System.Drawing.Size(120, 30);
-            this.companyPayValue.TabIndex = 24;
-            // 
-            // miscValue
-            // 
-            this.miscValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.miscValue.Location = new System.Drawing.Point(323, 436);
-            this.miscValue.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.miscValue.Name = "miscValue";
-            this.miscValue.Size = new System.Drawing.Size(120, 30);
-            this.miscValue.TabIndex = 26;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(47, 436);
+            this.label8.Location = new System.Drawing.Point(47, 421);
             this.label8.Name = "label8";
             this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label8.Size = new System.Drawing.Size(164, 37);
             this.label8.TabIndex = 25;
             this.label8.Text = " نفقات متفرقة:";
+            // 
+            // totalAmount
+            // 
+            this.totalAmount.Location = new System.Drawing.Point(323, 131);
+            this.totalAmount.Mask = "00000";
+            this.totalAmount.Name = "totalAmount";
+            this.totalAmount.Size = new System.Drawing.Size(163, 26);
+            this.totalAmount.TabIndex = 27;
+            this.totalAmount.ValidatingType = typeof(int);
+            // 
+            // fuelValue
+            // 
+            this.fuelValue.Location = new System.Drawing.Point(323, 190);
+            this.fuelValue.Mask = "00000";
+            this.fuelValue.Name = "fuelValue";
+            this.fuelValue.Size = new System.Drawing.Size(163, 26);
+            this.fuelValue.TabIndex = 28;
+            this.fuelValue.ValidatingType = typeof(int);
+            // 
+            // repairValue
+            // 
+            this.repairValue.Location = new System.Drawing.Point(323, 249);
+            this.repairValue.Mask = "00000";
+            this.repairValue.Name = "repairValue";
+            this.repairValue.Size = new System.Drawing.Size(163, 26);
+            this.repairValue.TabIndex = 29;
+            this.repairValue.ValidatingType = typeof(int);
+            // 
+            // workerPayValue
+            // 
+            this.workerPayValue.Location = new System.Drawing.Point(323, 308);
+            this.workerPayValue.Mask = "00000";
+            this.workerPayValue.Name = "workerPayValue";
+            this.workerPayValue.Size = new System.Drawing.Size(163, 26);
+            this.workerPayValue.TabIndex = 30;
+            this.workerPayValue.ValidatingType = typeof(int);
+            // 
+            // companyValue
+            // 
+            this.companyValue.Location = new System.Drawing.Point(323, 367);
+            this.companyValue.Mask = "00000";
+            this.companyValue.Name = "companyValue";
+            this.companyValue.Size = new System.Drawing.Size(163, 26);
+            this.companyValue.TabIndex = 31;
+            this.companyValue.ValidatingType = typeof(int);
+            // 
+            // miscCostValue
+            // 
+            this.miscCostValue.Location = new System.Drawing.Point(323, 426);
+            this.miscCostValue.Mask = "00000";
+            this.miscCostValue.Name = "miscCostValue";
+            this.miscCostValue.Size = new System.Drawing.Size(163, 26);
+            this.miscCostValue.TabIndex = 32;
+            this.miscCostValue.ValidatingType = typeof(int);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(37, 85);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(544, 535);
+            this.groupBox1.TabIndex = 33;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "المعلومات:";
             // 
             // FrmAddEditDailyExchange
             // 
@@ -325,13 +306,13 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1119, 648);
-            this.Controls.Add(this.miscValue);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.companyPayValue);
+            this.Controls.Add(this.miscCostValue);
+            this.Controls.Add(this.companyValue);
             this.Controls.Add(this.workerPayValue);
             this.Controls.Add(this.repairValue);
-            this.Controls.Add(this.FuelValue);
-            this.Controls.Add(this.totalValue);
+            this.Controls.Add(this.fuelValue);
+            this.Controls.Add(this.totalAmount);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtNetAmount);
             this.Controls.Add(this.lblNetAmount);
@@ -347,6 +328,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.mainlbl);
+            this.Controls.Add(this.groupBox1);
             this.Name = "FrmAddEditDailyExchange";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
@@ -354,12 +336,6 @@
             this.Text = "اضافة/تعديل صرف يومي";
             this.Load += new System.EventHandler(this.FrmAddEditDailyExchange_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.totalValue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FuelValue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repairValue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workerPayValue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyPayValue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.miscValue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,12 +358,13 @@
         private System.Windows.Forms.Label lblNetAmount;
         private System.Windows.Forms.MaskedTextBox txtNetAmount;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.NumericUpDown totalValue;
-        private System.Windows.Forms.NumericUpDown FuelValue;
-        private System.Windows.Forms.NumericUpDown repairValue;
-        private System.Windows.Forms.NumericUpDown workerPayValue;
-        private System.Windows.Forms.NumericUpDown companyPayValue;
-        private System.Windows.Forms.NumericUpDown miscValue;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.MaskedTextBox totalAmount;
+        private System.Windows.Forms.MaskedTextBox fuelValue;
+        private System.Windows.Forms.MaskedTextBox repairValue;
+        private System.Windows.Forms.MaskedTextBox workerPayValue;
+        private System.Windows.Forms.MaskedTextBox companyValue;
+        private System.Windows.Forms.MaskedTextBox miscCostValue;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

@@ -13,6 +13,46 @@ namespace data_layer
 {
     public class monthlyExchange_data
     {
+        public static bool getExchange(int ExchID, ref stMonthlyExchange exchange)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(DataSetting.ConnectionString);
+            try
+            {
+                string Query = @"SELECT * FROM monthly_exchange
+                                 WHERE ID = @ExchID;";
+
+                SqlCommand command = new SqlCommand(Query, connection);
+                command.Parameters.AddWithValue("@ExchID", ExchID);
+
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    isFound = true;
+                    exchange.ID = (int)reader["ID"];
+                    exchange.TotalAmountPerMonth = (double)reader["total_amount"];
+                    exchange.BackupAmount = (double)reader["backup_amount"];
+                    exchange.WorkerSalary = (double)reader["worker_salary"];
+                    exchange.Date = (DateTime)reader["date_time"];
+                }
+                reader.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+
+        }
+
         public static bool getExchangeByMonthYear(int month, int year, ref stMonthlyExchange exchange)
         {
             bool isFound = false;
@@ -20,8 +60,8 @@ namespace data_layer
             try
             {
                 string Query = @"SELECT * FROM monthly_exchange
-                                 WHERE YEAR(date_time) = @year
-                         AND MONTH(date_time) = @month;";
+                                    WHERE YEAR(date_time) = @year
+                            AND MONTH(date_time) = @month;";
 
                 SqlCommand command = new SqlCommand(Query, connection);
                 command.Parameters.AddWithValue("@year", year);

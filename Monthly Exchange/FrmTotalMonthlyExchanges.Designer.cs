@@ -73,9 +73,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(706, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(307, 46);
+            this.label1.Size = new System.Drawing.Size(325, 46);
             this.label1.TabIndex = 7;
-            this.label1.Text = "بيانات الصرف اليومي";
+            this.label1.Text = "بيانات الصرف الشهري";
             // 
             // dataGridView1
             // 
@@ -92,11 +92,14 @@
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.Size = new System.Drawing.Size(1682, 577);
             this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // FrmTotalMonthlyExchanges
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1715, 758);
             this.Controls.Add(this.lblRecords);
@@ -107,7 +110,9 @@
             this.Name = "FrmTotalMonthlyExchanges";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "بيانات الصرف الشهري";
+            this.Load += new System.EventHandler(this.FrmTotalMonthlyExchanges_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

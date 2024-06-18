@@ -13,6 +13,7 @@ namespace transportation_system.Daily_Exchange
 {
     public partial class FrmTotalDailyExchanges : Form
     {
+        DataTable exch = null; 
         public FrmTotalDailyExchanges()
         {
             InitializeComponent();
@@ -53,7 +54,7 @@ namespace transportation_system.Daily_Exchange
         }
         private void FrmTotalDailyExchanges_Load(object sender, EventArgs e)
         {
-            DataTable exch = dailyExchange.DailyExchangeData();
+            exch = dailyExchange.DailyExchangeData();
             dataGridView1.DataSource = exch;
             lblRecords.Text = dataGridView1.RowCount.ToString();
             _renameHeaders();
@@ -63,6 +64,13 @@ namespace transportation_system.Daily_Exchange
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void _RefreshData()
+        {
+            exch = dailyExchange.DailyExchangeData();
+            dataGridView1.DataSource = exch;
+            lblRecords.Text = dataGridView1.RowCount.ToString();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -77,11 +85,13 @@ namespace transportation_system.Daily_Exchange
                     //edit coode
                     FrmAddEditDailyExchange frm = new FrmAddEditDailyExchange(ExchangeID);
                     frm.ShowDialog();
+                    //refresh dataSource 
+                    _RefreshData();
                 }
                 else if (ColumnName == "Delete")
                 {
                     //delete code
-                    if (MessageBox.Show("هل انت متأكد انك تريد اتمام عملية الحذف؟ ملاحظة: المعلومات غير قابلة للاسترداد لاحقاَ !", "Message Box", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
+                    if (MessageBox.Show("هل انت متأكد انك تريد اتمام عملية الحذف؟ /n ملاحظة: المعلومات غير قابلة للاسترداد لاحقاَ !", "Message Box", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
                     {
                         dailyExchange exch = dailyExchange.Find(ExchangeID);
                         if (exch != null)
@@ -98,6 +108,8 @@ namespace transportation_system.Daily_Exchange
                         MessageBox.Show("تم الغاء عملية الحذف بنجاح", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
 
 
+                    //refresh dataSource 
+                    _RefreshData();
                     return;
                 }
             }
