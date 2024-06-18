@@ -99,6 +99,9 @@
     <EmbeddedResource Include="Monthly Exchange\FrmAddEditMonthlyExchange.resx">
       <DependentUpon>FrmAddEditMonthlyExchange.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Monthly Exchange\FrmTotalMonthlyExchanges.resx">
+      <DependentUpon>FrmTotalMonthlyExchanges.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

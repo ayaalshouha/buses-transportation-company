@@ -325,7 +325,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAddEditMonthlyExchange";
+            this.Text = "اضافة/تعديل صرف شهري";
             this.Load += new System.EventHandler(this.FrmAddEditMonthlyExchange_Load);
             ((System.ComponentModel.ISupportInitialize)(this.salaryValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backupValue)).EndInit();

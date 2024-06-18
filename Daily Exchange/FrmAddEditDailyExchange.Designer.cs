@@ -351,7 +351,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "اضافة صرف يومي";
+            this.Text = "اضافة/تعديل صرف يومي";
             this.Load += new System.EventHandler(this.FrmAddEditDailyExchange_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.totalValue)).EndInit();

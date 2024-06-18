@@ -81,15 +81,15 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 676);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 26);
+            this.label2.Size = new System.Drawing.Size(114, 26);
             this.label2.TabIndex = 4;
-            this.label2.Text = "No. of Records: ";
+            this.label2.Text = "عدد السجلات:";
             // 
             // lblRecords
             // 
             this.lblRecords.AutoSize = true;
             this.lblRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecords.Location = new System.Drawing.Point(187, 676);
+            this.lblRecords.Location = new System.Drawing.Point(150, 676);
             this.lblRecords.Name = "lblRecords";
             this.lblRecords.Size = new System.Drawing.Size(72, 26);
             this.lblRecords.TabIndex = 5;
@@ -112,7 +112,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmTotalDailyExchanges";
+            this.Text = "بيانات الصرف اليومي";
             this.Load += new System.EventHandler(this.FrmTotalDailyExchanges_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

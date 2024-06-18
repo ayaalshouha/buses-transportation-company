@@ -67,37 +67,40 @@ namespace transportation_system.Daily_Exchange
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string ColumnName = dataGridView1.Columns[e.ColumnIndex].Name;
-            int ExchangeID = (int)dataGridView1["ID", e.RowIndex].Value;
+            if(e.RowIndex >= 0)
+            {
+                string ColumnName = dataGridView1.Columns[e.ColumnIndex].Name;
+                int ExchangeID = (int)dataGridView1["ID", e.RowIndex].Value;
 
-            if (ColumnName == "Edit")
-            {
-                //edit coode
-                FrmAddEditDailyExchange frm = new FrmAddEditDailyExchange(ExchangeID);
-                frm.ShowDialog();
-            }
-            else if (ColumnName == "Delete")
-            {
-                //delete code
-                if (MessageBox.Show("هل انت متأكد انك تريد اتمام عملية الحذف؟ ملاحظة: المعلومات غير قابلة للاسترداد لاحقاَ !", "Message Box", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
+                if (ColumnName == "Edit")
                 {
-                    dailyExchange exch = dailyExchange.Find(ExchangeID);
-                    if (exch != null)
+                    //edit coode
+                    FrmAddEditDailyExchange frm = new FrmAddEditDailyExchange(ExchangeID);
+                    frm.ShowDialog();
+                }
+                else if (ColumnName == "Delete")
+                {
+                    //delete code
+                    if (MessageBox.Show("هل انت متأكد انك تريد اتمام عملية الحذف؟ ملاحظة: المعلومات غير قابلة للاسترداد لاحقاَ !", "Message Box", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
                     {
-                        if (exch.Delete())
-                            MessageBox.Show("تمت عملية الحذف بنجاح.", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                        dailyExchange exch = dailyExchange.Find(ExchangeID);
+                        if (exch != null)
+                        {
+                            if (exch.Delete())
+                                MessageBox.Show("تمت عملية الحذف بنجاح.", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                            else
+                                MessageBox.Show("حدث خطأ ما اثناء الحذف، يرجى المحاولة مرة أخرى لاحقاً.", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                        }
                         else
-                            MessageBox.Show("حدث خطأ ما اثناء الحذف، يرجى المحاولة مرة أخرى لاحقاً.", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                            MessageBox.Show("البيانات المراد حذفها غير متوفرة يرجى المحاولة لاحقاَ", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                     }
                     else
-                        MessageBox.Show("البيانات المراد حذفها غير متوفرة يرجى المحاولة لاحقاَ", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                        MessageBox.Show("تم الغاء عملية الحذف بنجاح", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+
+
+                    return;
                 }
-                else
-                    MessageBox.Show("تم الغاء عملية الحذف بنجاح", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
-
-                return;
             }
-
         }
     }
 }

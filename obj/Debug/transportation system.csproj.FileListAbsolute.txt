@@ -17,3 +17,4 @@ C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation_sy
 C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation_system.Monthly_Exchange.FrmAddEditMonthlyExchange.resources
 C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation_system.frmBackupAmount.resources
 C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation_system.Daily_Exchange.FrmTotalDailyExchanges.resources
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation_system.Monthly_Exchange.FrmTotalMonthlyExchanges.resources
