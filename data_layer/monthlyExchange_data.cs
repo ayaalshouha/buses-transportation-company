@@ -400,10 +400,11 @@ namespace data_layer
 
                 Connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
+                if(reader.HasRows)
                 {
                     dt.Load(reader);
                 }
+                reader.Close();
             }
             catch (Exception ex)
             {
