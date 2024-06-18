@@ -67,24 +67,19 @@ namespace transportation_system.Daily_Exchange
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
             string ColumnName = dataGridView1.Columns[e.ColumnIndex].Name;
             int ExchangeID = (int)dataGridView1["ID", e.RowIndex].Value;
 
-            if (ColumnName == "تعديل")
+            if (ColumnName == "Edit")
             {
                 //edit coode
                 FrmAddEditDailyExchange frm = new FrmAddEditDailyExchange(ExchangeID);
                 frm.ShowDialog();
             }
-            else if (ColumnName == "حذف")
+            else if (ColumnName == "Delete")
             {
                 //delete code
-                if(MessageBox.Show("هل انت متأكد انك تريد اتمام عملية الحذف؟ ملاحظة: المعلومات غير قابلة للاسترداد لاحقاَ !", "Message Box", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("هل انت متأكد انك تريد اتمام عملية الحذف؟ ملاحظة: المعلومات غير قابلة للاسترداد لاحقاَ !", "Message Box", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     dailyExchange exch = dailyExchange.Find(ExchangeID);
                     if (exch != null)
@@ -100,8 +95,9 @@ namespace transportation_system.Daily_Exchange
                 else
                     MessageBox.Show("تم الغاء عملية الحذف بنجاح", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                return; 
+                return;
             }
+
         }
     }
 }
