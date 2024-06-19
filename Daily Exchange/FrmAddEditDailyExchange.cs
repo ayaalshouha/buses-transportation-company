@@ -51,7 +51,7 @@ namespace transportation_system.Daily_Exchange
                     rdBusTwo.Checked = true;
 
                 dateTimePicker1.Value = exchange.Date;
-                txtNetAmount.Text = exchange.NetAmount.ToString(); 
+                txtNetAmount.Text = exchange.NetAmount.ToString() + " JOD"; 
             }
         }
 
@@ -59,6 +59,7 @@ namespace transportation_system.Daily_Exchange
         {
             if(mode == enMode.update)
             {
+                lblHeader.Text = "تعديل صرف يومي";
                 ResetVisibleElement();
                 exchange = dailyExchange.Find(exchangeID); 
                 if(exchange != null)
@@ -71,6 +72,7 @@ namespace transportation_system.Daily_Exchange
             }
             else
             {
+                lblHeader.Text = "اضافة صرف يومي";
                 dateTimePicker1.Value = DateTime.Now;
                 SetVisibleElements();
             }
@@ -114,7 +116,7 @@ namespace transportation_system.Daily_Exchange
                     MessageBox.Show("تم حفظ البيانات بنجاح.", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                     txtNetAmount.Visible = true;
                     lblNetAmount.Visible = true; 
-                    txtNetAmount.Text = exchange.NetAmount.ToString();
+                    txtNetAmount.Text = exchange.NetAmount.ToString() + " JOD";
                     btnSave.Enabled = false;
                     exchangeID = exchange.ID; 
                 }

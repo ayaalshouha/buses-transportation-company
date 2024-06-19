@@ -70,6 +70,7 @@
     <Compile Include="frmBackupAmount.Designer.cs">
       <DependentUpon>frmBackupAmount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global\clsGlobal.cs" />
     <Compile Include="Monthly Exchange\FrmAddEditMonthlyExchange.cs">
       <SubType>Form</SubType>
     </Compile>

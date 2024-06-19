@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mainlbl = new System.Windows.Forms.Label();
+            this.lblHeader = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +41,6 @@
             this.rdBusOne = new System.Windows.Forms.RadioButton();
             this.rdBusTwo = new System.Windows.Forms.RadioButton();
             this.lblNetAmount = new System.Windows.Forms.Label();
-            this.txtNetAmount = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.totalAmount = new System.Windows.Forms.MaskedTextBox();
@@ -51,19 +50,20 @@
             this.companyValue = new System.Windows.Forms.MaskedTextBox();
             this.miscCostValue = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNetAmount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // mainlbl
+            // lblHeader
             // 
-            this.mainlbl.AutoSize = true;
-            this.mainlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainlbl.Location = new System.Drawing.Point(423, 19);
-            this.mainlbl.Name = "mainlbl";
-            this.mainlbl.Size = new System.Drawing.Size(273, 46);
-            this.mainlbl.TabIndex = 0;
-            this.mainlbl.Text = "اضافة صرف يومي";
-            this.mainlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Location = new System.Drawing.Point(423, 19);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(273, 46);
+            this.lblHeader.TabIndex = 0;
+            this.lblHeader.Text = "اضافة صرف يومي";
+            this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSave
             // 
@@ -195,24 +195,12 @@
             this.lblNetAmount.AutoSize = true;
             this.lblNetAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNetAmount.ForeColor = System.Drawing.Color.Maroon;
-            this.lblNetAmount.Location = new System.Drawing.Point(723, 132);
+            this.lblNetAmount.Location = new System.Drawing.Point(761, 164);
             this.lblNetAmount.Name = "lblNetAmount";
             this.lblNetAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblNetAmount.Size = new System.Drawing.Size(154, 37);
             this.lblNetAmount.TabIndex = 17;
             this.lblNetAmount.Text = "صافي المبلغ:";
-            // 
-            // txtNetAmount
-            // 
-            this.txtNetAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNetAmount.ForeColor = System.Drawing.Color.Maroon;
-            this.txtNetAmount.Location = new System.Drawing.Point(909, 138);
-            this.txtNetAmount.Mask = "00000";
-            this.txtNetAmount.Name = "txtNetAmount";
-            this.txtNetAmount.ReadOnly = true;
-            this.txtNetAmount.Size = new System.Drawing.Size(137, 30);
-            this.txtNetAmount.TabIndex = 18;
-            this.txtNetAmount.ValidatingType = typeof(int);
             // 
             // pictureBox1
             // 
@@ -297,7 +285,18 @@
             this.groupBox1.Size = new System.Drawing.Size(544, 535);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "المعلومات:";
+            this.groupBox1.Text = "المعلومات";
+            // 
+            // txtNetAmount
+            // 
+            this.txtNetAmount.AutoSize = true;
+            this.txtNetAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNetAmount.ForeColor = System.Drawing.Color.Maroon;
+            this.txtNetAmount.Location = new System.Drawing.Point(935, 164);
+            this.txtNetAmount.Name = "txtNetAmount";
+            this.txtNetAmount.Size = new System.Drawing.Size(103, 37);
+            this.txtNetAmount.TabIndex = 34;
+            this.txtNetAmount.Text = "[????]";
             // 
             // FrmAddEditDailyExchange
             // 
@@ -306,6 +305,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1119, 648);
+            this.Controls.Add(this.txtNetAmount);
             this.Controls.Add(this.miscCostValue);
             this.Controls.Add(this.companyValue);
             this.Controls.Add(this.workerPayValue);
@@ -314,7 +314,6 @@
             this.Controls.Add(this.totalAmount);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txtNetAmount);
             this.Controls.Add(this.lblNetAmount);
             this.Controls.Add(this.rdBusTwo);
             this.Controls.Add(this.rdBusOne);
@@ -327,7 +326,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.mainlbl);
+            this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmAddEditDailyExchange";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -343,7 +342,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label mainlbl;
+        private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -356,7 +355,6 @@
         private System.Windows.Forms.RadioButton rdBusOne;
         private System.Windows.Forms.RadioButton rdBusTwo;
         private System.Windows.Forms.Label lblNetAmount;
-        private System.Windows.Forms.MaskedTextBox txtNetAmount;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.MaskedTextBox totalAmount;
@@ -366,5 +364,6 @@
         private System.Windows.Forms.MaskedTextBox companyValue;
         private System.Windows.Forms.MaskedTextBox miscCostValue;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label txtNetAmount;
     }
 }

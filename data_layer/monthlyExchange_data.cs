@@ -32,9 +32,9 @@ namespace data_layer
                 {
                     isFound = true;
                     exchange.ID = (int)reader["ID"];
-                    exchange.TotalAmountPerMonth = (double)reader["total_amount"];
-                    exchange.BackupAmount = (double)reader["backup_amount"];
-                    exchange.WorkerSalary = (double)reader["worker_salary"];
+                    exchange.TotalAmountPerMonth = Convert.ToDouble(reader["total_amount"]);
+                    exchange.BackupAmount = Convert.ToDouble(reader["backup_amount"]);
+                    exchange.WorkerSalary = Convert.ToDouble(reader["worker_salary"]);
                     exchange.Date = (DateTime)reader["date_time"];
                 }
                 reader.Close();
@@ -74,9 +74,9 @@ namespace data_layer
                 {
                     isFound = true;
                     exchange.ID = (int)reader["ID"];
-                    exchange.TotalAmountPerMonth = (double)reader["total_amount"];
-                    exchange.BackupAmount = (double)reader["backup_amount"];
-                    exchange.WorkerSalary = (double)reader["worker_salary"];
+                    exchange.TotalAmountPerMonth = Convert.ToDouble(reader["total_amount"]);
+                    exchange.BackupAmount = Convert.ToDouble(reader["backup_amount"]);
+                    exchange.WorkerSalary = Convert.ToDouble(reader["worker_salary"]);
                     exchange.Date = (DateTime)reader["date_time"];
                 }
                 reader.Close();
@@ -138,14 +138,13 @@ namespace data_layer
             SqlConnection Connection = new SqlConnection(DataSetting.ConnectionString);
             try
             {
-                string Query = @"Update monthy_exchange
-                                SET total_amount = @totalAmount , 
-                                    backup_amount = @backupamount,
+                string Query = @"Update monthly_exchange
+                                SET backup_amount = @backupamount,
                                     worker_salary = @workersalary
                                 WHERE ID = @exchangeID;";
 
                 SqlCommand Command = new SqlCommand(Query, Connection);
-                Command.Parameters.AddWithValue("@total_amount", exchange.TotalAmountPerMonth);
+                //Command.Parameters.AddWithValue("@totalAmount", exchange.TotalAmountPerMonth);
                 Command.Parameters.AddWithValue("@backupamount", exchange.BackupAmount);
                 Command.Parameters.AddWithValue("@exchangeID", exchange.ID);
                 Command.Parameters.AddWithValue("@workersalary", exchange.WorkerSalary);
@@ -354,9 +353,7 @@ namespace data_layer
         }
         public static double getTotalPerMonth(int month, int year)
         {
-
-
-            double totalAmount = -1;
+            double totalAmount = 0;
             SqlConnection connection = new SqlConnection(DataSetting.ConnectionString);
             try
             {
