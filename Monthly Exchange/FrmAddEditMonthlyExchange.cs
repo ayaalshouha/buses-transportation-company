@@ -71,7 +71,11 @@ namespace transportation_system.Monthly_Exchange
         {
             if (!ValidateChildren())
                 return;
-            if (MessageBox.Show("هل انت متأكد انك تريد الحفظ؟", "Message Box", , MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
+
+            /* if (txtBackup.Enabled == false || txtSalary.Enabled == false)
+                return;*/
+
+            if (MessageBox.Show("هل انت متأكد انك تريد الحفظ؟", "Message Box", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
             {
                 if(_Mode == enMode.add)
                     exchange = new monthlyExchange();
@@ -152,9 +156,12 @@ namespace transportation_system.Monthly_Exchange
             }
             else
             {
-                _EnableElements();
-                //صافي مبلغ الشهرين للتوزيع
                 totalAmountPerMonth.Text = monthlyExchange.TotalAmountPerMonth(dateTimePicker1.Value).ToString() + "JOD";
+                
+                if (Convert.ToDouble(totalAmountPerMonth.Text) > 0)
+                    _EnableElements();
+                else
+                    return; 
             }
         }
     }
