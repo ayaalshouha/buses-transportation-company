@@ -51,6 +51,7 @@
             this.miscCostValue = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNetAmount = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -292,11 +293,22 @@
             this.txtNetAmount.AutoSize = true;
             this.txtNetAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNetAmount.ForeColor = System.Drawing.Color.Maroon;
-            this.txtNetAmount.Location = new System.Drawing.Point(935, 164);
+            this.txtNetAmount.Location = new System.Drawing.Point(919, 164);
             this.txtNetAmount.Name = "txtNetAmount";
             this.txtNetAmount.Size = new System.Drawing.Size(103, 37);
             this.txtNetAmount.TabIndex = 34;
             this.txtNetAmount.Text = "[????]";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Maroon;
+            this.label9.Location = new System.Drawing.Point(1028, 164);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(45, 37);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "د.أ";
             // 
             // FrmAddEditDailyExchange
             // 
@@ -305,6 +317,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1119, 648);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.txtNetAmount);
             this.Controls.Add(this.miscCostValue);
             this.Controls.Add(this.companyValue);
@@ -365,5 +378,6 @@
         private System.Windows.Forms.MaskedTextBox miscCostValue;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label txtNetAmount;
+        private System.Windows.Forms.Label label9;
     }
 }

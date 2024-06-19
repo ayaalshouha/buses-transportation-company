@@ -28,11 +28,13 @@ namespace transportation_system.Daily_Exchange
         {
             lblNetAmount.Visible = false;
             txtNetAmount.Visible = false;
+            label9.Visible= false;
         }
         private void ResetVisibleElement()
         {
             lblNetAmount.Visible = true;
             txtNetAmount.Visible = true;
+            label9.Visible = true;
         }
         private void _FillExchangeDataIntoForm()
         {
@@ -51,7 +53,7 @@ namespace transportation_system.Daily_Exchange
                     rdBusTwo.Checked = true;
 
                 dateTimePicker1.Value = exchange.Date;
-                txtNetAmount.Text = exchange.NetAmount.ToString() + " JOD"; 
+                txtNetAmount.Text = exchange.NetAmount.ToString(); 
             }
         }
 
@@ -92,7 +94,7 @@ namespace transportation_system.Daily_Exchange
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            DateTime date = dateTimePicker1.Value;
+            DateTime date = dateTimePicker1.Value.Date;
             int busnumber = rdBusOne.Checked ? 1 : 2; 
 
             if (mode == enMode.add)
@@ -103,9 +105,12 @@ namespace transportation_system.Daily_Exchange
                     return; 
                 }
             }
-
             if(MessageBox.Show("هل أنت متأكد أنك تريد الحفظ؟", "Message Box", MessageBoxButtons.YesNo, MessageBoxIcon.Question,MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
             {
+                int busNumber = rdBusOne.Checked? 1 : 2;
+
+                
+
                 if(mode == enMode.add)
                     exchange = new dailyExchange();
 
@@ -114,9 +119,8 @@ namespace transportation_system.Daily_Exchange
                 if (exchange.Save())
                 {
                     MessageBox.Show("تم حفظ البيانات بنجاح.", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
-                    txtNetAmount.Visible = true;
-                    lblNetAmount.Visible = true; 
-                    txtNetAmount.Text = exchange.NetAmount.ToString() + " JOD";
+                    ResetVisibleElement();
+                    txtNetAmount.Text = exchange.NetAmount.ToString();
                     btnSave.Enabled = false;
                     exchangeID = exchange.ID; 
                 }

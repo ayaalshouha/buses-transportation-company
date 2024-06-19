@@ -33,6 +33,7 @@ namespace transportation_system.Monthly_Exchange
                 txtSalary.Enabled = false;
                 lbltotal.Visible = false;
                 totalAmountPerMonth.Visible = false;
+                label9.Visible = false;
             }
             else
             {
@@ -40,6 +41,7 @@ namespace transportation_system.Monthly_Exchange
                 txtSalary.Enabled = true;
                 lbltotal.Visible = true;
                 totalAmountPerMonth.Visible = true;
+                label9.Visible = true;
             }
         }
 
@@ -49,14 +51,13 @@ namespace transportation_system.Monthly_Exchange
             txtSalary.Enabled = true;
             lbltotal.Visible = true;
             totalAmountPerMonth.Visible = true;
+            label9.Visible = true;
         }
 
         private void _AssignInsertedDataToExchange()
         {
             exchange.BackupAmount = Convert.ToDouble(txtBackup.Text); 
             exchange.WorkerSalary = Convert.ToDouble(txtSalary.Text);
-           // string totalAmount = totalAmountPerMonth.Text.Trim('J' , 'P' ,'D');
-            //exchange.TotalAmount = Convert.ToDouble(totalAmount);
             exchange.Date = dateTimePicker1.Value; 
         }
         private void _RetrieveData()
@@ -71,9 +72,6 @@ namespace transportation_system.Monthly_Exchange
         {
             if (!ValidateChildren())
                 return;
-
-            /* if (txtBackup.Enabled == false || txtSalary.Enabled == false)
-                return;*/
 
             if (MessageBox.Show("هل انت متأكد انك تريد الحفظ؟", "Message Box", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
             {
@@ -147,6 +145,8 @@ namespace transportation_system.Monthly_Exchange
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+            lblNote.Visible = false;
+
             // check if already exist by month 
             int month = dateTimePicker1.Value.Month;
             if (_Mode == enMode.add && monthlyExchange.isExist(month))
@@ -156,12 +156,15 @@ namespace transportation_system.Monthly_Exchange
             }
             else
             {
-                totalAmountPerMonth.Text = monthlyExchange.TotalAmountPerMonth(dateTimePicker1.Value).ToString() + "JOD";
-                
+                totalAmountPerMonth.Text = monthlyExchange.TotalAmountPerMonth(dateTimePicker1.Value).ToString();
                 if (Convert.ToDouble(totalAmountPerMonth.Text) > 0)
                     _EnableElements();
                 else
-                    return; 
+                {
+                    lblNote.Visible = true;
+                    return;
+                }
+
             }
         }
     }
