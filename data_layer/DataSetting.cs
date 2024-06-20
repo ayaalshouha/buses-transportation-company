@@ -9,6 +9,7 @@ namespace data_layer
 {
     public enum enPeople { waleed, akef, khaldoun }
     public enum enSection : int { repair, worker, company, fuel, net, total }
+
     public struct stDailyExchange
     {
         public int ID {  get; set; }

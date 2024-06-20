@@ -124,6 +124,26 @@ namespace transportation_system.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cartoon_speech_bubble_money_and_question_mark_illustration_free_vector {
+            get {
+                object obj = ResourceManager.GetObject("cartoon-speech-bubble-money-and-question-mark-illustration-free-vector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cartoon_speech_bubble_money_and_question_mark_illustration_free_vector1 {
+            get {
+                object obj = ResourceManager.GetObject("cartoon-speech-bubble-money-and-question-mark-illustration-free-vector1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap money {
             get {
                 object obj = ResourceManager.GetObject("money", resourceCulture);
@@ -137,6 +157,17 @@ namespace transportation_system.Properties {
         internal static System.Drawing.Bitmap pngtree_city_public_transport_infrastructure_image_1107196 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-city-public-transport-infrastructure-image_1107196", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stack_golden_coin_money_bag_calculator_icon_isolated_white_background_stack_golden_coin_money_bag_138710207 {
+            get {
+                object obj = ResourceManager.GetObject("stack-golden-coin-money-bag-calculator-icon-isolated-white-background-stack-golde" +
+                        "n-coin-money-bag-138710207", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

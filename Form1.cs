@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using transportation_system.Daily_Exchange;
 using transportation_system.Monthly_Exchange;
+using transportation_system.Total;
 
 namespace transportation_system
 {
@@ -50,7 +51,8 @@ namespace transportation_system
 
         private void button11_Click(object sender, EventArgs e)
         {
-            
+            frmExchangesInfo frm = new frmExchangesInfo();
+            frm.ShowDialog();
         }
     }
 }

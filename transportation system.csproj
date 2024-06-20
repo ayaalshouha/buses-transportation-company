@@ -146,7 +146,9 @@
   <ItemGroup>
     <None Include="Resources\arrow_left %283%29.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\stack-golden-coin-money-bag-calculator-icon-isolated-white-background-stack-golden-coin-money-bag-138710207.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bus-icon-public-transport-bus-marker-for-map-public-transportation-transit-round-icon-bus-pictogram-illustration-vector.jpg" />
   </ItemGroup>
@@ -164,6 +166,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\2460494.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cartoon-speech-bubble-money-and-question-mark-illustration-free-vector.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cartoon-speech-bubble-money-and-question-mark-illustration-free-vector1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -21,5 +21,20 @@ namespace transportation_system.Total
         {
 
         }
+
+        private void frmExchangesInfo_Load(object sender, EventArgs e)
+        {
+            // upload options from daily exchange data 
+           //read data required 
+           
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            int busNumebr = rdBusOne.Checked ? 1 : rdBusTwo.Checked ? 2 : 0;
+            DateTime from = dateFrom.Value.Date; 
+            DateTime to = dateTo.Value.Date;    
+            
+        }
     }
 }

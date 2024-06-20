@@ -61,6 +61,8 @@ namespace data_layer
 
             return total;
         }
+        
+        
         public static double TotalBackupAmount()
         {
             double total_backup = 0;
