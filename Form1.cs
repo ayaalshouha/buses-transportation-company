@@ -18,35 +18,39 @@ namespace transportation_system
         {
             InitializeComponent();
         }
-
-        private void btnAddDailyExchange_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             FrmAddEditDailyExchange frm = new FrmAddEditDailyExchange();
             frm.ShowDialog();
         }
 
-        private void btnAddMonthlyExchange_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e)
         {
             FrmAddEditMonthlyExchange frm = new FrmAddEditMonthlyExchange();
             frm.ShowDialog();
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            frmBackupAmount frm = new frmBackupAmount();
-            frm.ShowDialog();
-        }
-
-        private void DailyExchangeData_Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e)
         {
             FrmTotalDailyExchanges frm = new FrmTotalDailyExchanges();
             frm.ShowDialog();
         }
 
-        private void btnMonthlyExchangeData_Click(object sender, EventArgs e)
+        private void button10_Click(object sender, EventArgs e)
         {
             FrmTotalMonthlyExchanges frm = new FrmTotalMonthlyExchanges();
             frm.ShowDialog();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            frmBackupAmount frm = new frmBackupAmount();
+            frm.ShowDialog();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -14,22 +14,25 @@ namespace transportation_system.Monthly_Exchange
 {
     public partial class FrmTotalMonthlyExchanges : Form
     {
+        private DataTable exchange = null; 
         public FrmTotalMonthlyExchanges()
         {
             InitializeComponent();
         }
         private void _renameHeaders()
         {
-            dataGridView1.Columns[0].Width = 40;
-            dataGridView1.Columns[1].HeaderText = "المبلغ كامل";
-            dataGridView1.Columns[2].HeaderText = "مبلغ الاحتياط";
-            dataGridView1.Columns[3].HeaderText = "راتب الموظف";
-            dataGridView1.Columns[4].HeaderText = "صافي المبلغ";
-            dataGridView1.Columns[5].HeaderText = "نسبة عاكف الشوحة";
-            dataGridView1.Columns[6].HeaderText = "نسبة خلدون الشوحة";
-            dataGridView1.Columns[7].HeaderText = "نسبة وليد الشوحة";
-            dataGridView1.Columns[8].HeaderText = "التاريخ";
-
+            if(dataGridView1.Rows.Count > 0)
+            {
+                dataGridView1.Columns[0].Width = 40;
+                dataGridView1.Columns[1].HeaderText = "المبلغ كامل";
+                dataGridView1.Columns[2].HeaderText = "مبلغ الاحتياط";
+                dataGridView1.Columns[3].HeaderText = "راتب الموظف";
+                dataGridView1.Columns[4].HeaderText = "صافي المبلغ";
+                dataGridView1.Columns[5].HeaderText = "نسبة عاكف الشوحة";
+                dataGridView1.Columns[6].HeaderText = "نسبة خلدون الشوحة";
+                dataGridView1.Columns[7].HeaderText = "نسبة وليد الشوحة";
+                dataGridView1.Columns[8].HeaderText = "التاريخ";
+            }
         }
         private void _AddEditDeleteButtons()
         {
@@ -52,12 +55,19 @@ namespace transportation_system.Monthly_Exchange
         }
         private void FrmTotalMonthlyExchanges_Load(object sender, EventArgs e)
         {
-            DataTable exch = monthlyExchange.MonthlyExchangeData();
-            dataGridView1.DataSource = exch;
+            exchange = monthlyExchange.MonthlyExchangeData();
+            dataGridView1.DataSource = exchange;
             lblRecords.Text = dataGridView1.RowCount.ToString();
             _renameHeaders();
             _AddEditDeleteButtons();
         }
+        private void _RefreshData()
+        {
+            exchange = monthlyExchange.MonthlyExchangeData();
+            dataGridView1.DataSource = exchange;
+            lblRecords.Text = dataGridView1.RowCount.ToString();
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -93,7 +103,13 @@ namespace transportation_system.Monthly_Exchange
 
                     return;
                 }
+                _RefreshData();
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

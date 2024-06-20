@@ -66,6 +66,7 @@
             this.btnClose.TabIndex = 8;
             this.btnClose.Text = "اغلاق";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label1
             // 

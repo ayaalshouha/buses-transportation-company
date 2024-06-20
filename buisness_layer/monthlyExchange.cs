@@ -133,7 +133,7 @@ namespace buisness_layer
 
         public bool Delete()
         {
-            return dailyExchange_data.Delete(this.ID);
+            return monthlyExchange_data.Delete(this.ID);
         }
         public static double TotalAmountPerMonth(DateTime date)
         {

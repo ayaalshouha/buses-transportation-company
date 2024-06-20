@@ -31,7 +31,6 @@ namespace transportation_system.Daily_Exchange
             dataGridView1.Columns[7].HeaderText = "رقم الباص";
             dataGridView1.Columns[8].HeaderText = "التاريخ";
             dataGridView1.Columns[9].HeaderText = "نفقات اضافية";
-
         }
         private void _AddEditDeleteButtons()
         {
@@ -85,13 +84,14 @@ namespace transportation_system.Daily_Exchange
                     //edit coode
                     FrmAddEditDailyExchange frm = new FrmAddEditDailyExchange(ExchangeID);
                     frm.ShowDialog();
-                    //refresh dataSource 
+                    //refresh dataSource
                     _RefreshData();
+
                 }
                 else if (ColumnName == "Delete")
                 {
                     //delete code
-                    if (MessageBox.Show("هل انت متأكد انك تريد اتمام عملية الحذف؟ /n ملاحظة: المعلومات غير قابلة للاسترداد لاحقاَ !", "Message Box", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
+                    if (MessageBox.Show("هل انت متأكد انك تريد اتمام عملية الحذف؟  ملاحظة: المعلومات غير قابلة للاسترداد لاحقاَ !", "Message Box", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
                     {
                         dailyExchange exch = dailyExchange.Find(ExchangeID);
                         if (exch != null)
@@ -100,19 +100,20 @@ namespace transportation_system.Daily_Exchange
                                 MessageBox.Show("تمت عملية الحذف بنجاح.", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                             else
                                 MessageBox.Show("حدث خطأ ما اثناء الحذف، يرجى المحاولة مرة أخرى لاحقاً.", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                           
+                            _RefreshData();
                         }
                         else
                             MessageBox.Show("البيانات المراد حذفها غير متوفرة يرجى المحاولة لاحقاَ", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                     }
                     else
                         MessageBox.Show("تم الغاء عملية الحذف بنجاح", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
-
-
-                    //refresh dataSource 
-                    _RefreshData();
-                    return;
                 }
+               
             }
         }
+
+
+
     }
 }

@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using transportation_system.Global;
 
 namespace transportation_system.Monthly_Exchange
 {
@@ -56,6 +55,7 @@ namespace transportation_system.Monthly_Exchange
 
         private void _AssignInsertedDataToExchange()
         {
+            exchange.TotalAmount = Convert.ToDouble(totalAmountPerMonth.Text); 
             exchange.BackupAmount = Convert.ToDouble(txtBackup.Text); 
             exchange.WorkerSalary = Convert.ToDouble(txtSalary.Text);
             exchange.Date = dateTimePicker1.Value; 

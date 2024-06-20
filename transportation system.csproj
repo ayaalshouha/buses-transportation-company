@@ -64,13 +64,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBackupAmount.cs">
+    <Compile Include="Total\frmBackupAmount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBackupAmount.Designer.cs">
+    <Compile Include="Total\frmBackupAmount.Designer.cs">
       <DependentUpon>frmBackupAmount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Global\clsGlobal.cs" />
     <Compile Include="Monthly Exchange\FrmAddEditMonthlyExchange.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,7 +93,7 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBackupAmount.resx">
+    <EmbeddedResource Include="Total\frmBackupAmount.resx">
       <DependentUpon>frmBackupAmount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Monthly Exchange\FrmAddEditMonthlyExchange.resx">
@@ -133,17 +132,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="images.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="208127004-school-bus-with-sun-behind.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arrow_left %283%29.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Total\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\bus-icon-public-transport-bus-marker-for-map-public-transportation-transit-round-icon-bus-pictogram-illustration-vector.jpg" />
   </ItemGroup>

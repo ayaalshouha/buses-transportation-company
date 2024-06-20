@@ -53,6 +53,10 @@
             this.totalAmountPerMonth = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lblNote = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -213,6 +217,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.khaldounPercent);
             this.groupBox1.Controls.Add(this.waleedPercent);
             this.groupBox1.Controls.Add(this.akefPercent);
@@ -255,7 +263,7 @@
             this.akefPercent.AutoSize = true;
             this.akefPercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.akefPercent.ForeColor = System.Drawing.Color.Maroon;
-            this.akefPercent.Location = new System.Drawing.Point(117, 317);
+            this.akefPercent.Location = new System.Drawing.Point(117, 312);
             this.akefPercent.Name = "akefPercent";
             this.akefPercent.Size = new System.Drawing.Size(78, 32);
             this.akefPercent.TabIndex = 58;
@@ -266,7 +274,7 @@
             this.txtNetAmount.AutoSize = true;
             this.txtNetAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNetAmount.ForeColor = System.Drawing.Color.Maroon;
-            this.txtNetAmount.Location = new System.Drawing.Point(117, 252);
+            this.txtNetAmount.Location = new System.Drawing.Point(117, 247);
             this.txtNetAmount.Name = "txtNetAmount";
             this.txtNetAmount.Size = new System.Drawing.Size(78, 32);
             this.txtNetAmount.TabIndex = 57;
@@ -324,6 +332,50 @@
             this.lblNote.TabIndex = 58;
             this.lblNote.Text = "** لا يوجد رصيد لهذا الشهر";
             this.lblNote.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(55, 247);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 37);
+            this.label1.TabIndex = 61;
+            this.label1.Text = "د.أ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Maroon;
+            this.label6.Location = new System.Drawing.Point(55, 312);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 37);
+            this.label6.TabIndex = 62;
+            this.label6.Text = "د.أ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Maroon;
+            this.label8.Location = new System.Drawing.Point(55, 375);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 37);
+            this.label8.TabIndex = 63;
+            this.label8.Text = "د.أ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Maroon;
+            this.label10.Location = new System.Drawing.Point(55, 438);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(45, 37);
+            this.label10.TabIndex = 64;
+            this.label10.Text = "د.أ";
             // 
             // FrmAddEditMonthlyExchange
             // 
@@ -387,5 +439,9 @@
         private System.Windows.Forms.Label txtNetAmount;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblNote;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label1;
     }
 }
