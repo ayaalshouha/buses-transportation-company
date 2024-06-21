@@ -80,6 +80,7 @@ namespace transportation_system.Monthly_Exchange
                     //edit coode
                     FrmAddEditMonthlyExchange frm = new FrmAddEditMonthlyExchange(ExchangeID);
                     frm.ShowDialog();
+                    _RefreshData();
                 }
                 else if (ColumnName == "Delete")
                 {
@@ -93,17 +94,16 @@ namespace transportation_system.Monthly_Exchange
                                 MessageBox.Show("تمت عملية الحذف بنجاح.", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                             else
                                 MessageBox.Show("حدث خطأ ما اثناء الحذف، يرجى المحاولة مرة أخرى لاحقاً.", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                            
+                            _RefreshData();
                         }
                         else
                             MessageBox.Show("البيانات المراد حذفها غير متوفرة يرجى المحاولة لاحقاَ", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                     }
                     else
                         MessageBox.Show("تم الغاء عملية الحذف بنجاح", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
-
-
                     return;
                 }
-                _RefreshData();
             }
         }
 

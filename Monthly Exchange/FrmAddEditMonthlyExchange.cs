@@ -13,9 +13,9 @@ namespace transportation_system.Monthly_Exchange
 {
     public partial class FrmAddEditMonthlyExchange : Form
     {
-        private enum enMode { add , update}; 
+        private enum enMode { add, update };
         private enMode _Mode = enMode.add;
-        private monthlyExchange exchange = null; 
+        private monthlyExchange exchange = null;
         private int exchange_id = -1;
         public FrmAddEditMonthlyExchange(int exchangeID = -1)
         {
@@ -26,7 +26,7 @@ namespace transportation_system.Monthly_Exchange
 
         private void _DisableElements()
         {
-            if(_Mode == enMode.add)
+            if (_Mode == enMode.add)
             {
                 txtBackup.Enabled = false;
                 txtSalary.Enabled = false;
@@ -55,10 +55,10 @@ namespace transportation_system.Monthly_Exchange
 
         private void _AssignInsertedDataToExchange()
         {
-            exchange.TotalAmount = Convert.ToDouble(totalAmountPerMonth.Text); 
-            exchange.BackupAmount = Convert.ToDouble(txtBackup.Text); 
+            exchange.TotalAmount = Convert.ToDouble(totalAmountPerMonth.Text);
+            exchange.BackupAmount = Convert.ToDouble(txtBackup.Text);
             exchange.WorkerSalary = Convert.ToDouble(txtSalary.Text);
-            exchange.Date = dateTimePicker1.Value; 
+            exchange.Date = dateTimePicker1.Value.Date;
         }
         private void _RetrieveData()
         {
@@ -75,12 +75,12 @@ namespace transportation_system.Monthly_Exchange
 
             if (MessageBox.Show("هل انت متأكد انك تريد الحفظ؟", "Message Box", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
             {
-                if(_Mode == enMode.add)
+                if (_Mode == enMode.add)
                     exchange = new monthlyExchange();
 
 
                 _AssignInsertedDataToExchange();
-              
+
                 if (exchange.Save())
                 {
                     MessageBox.Show("تم حفظ البيانات بنجاح.", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
@@ -129,8 +129,8 @@ namespace transportation_system.Monthly_Exchange
             if (_Mode == enMode.update)
             {
                 lblHeader.Text = "تعديل صرف شهري";
-                exchange = monthlyExchange.Find(exchange_id); 
-                if(exchange!= null)
+                exchange = monthlyExchange.Find(exchange_id);
+                if (exchange != null)
                     _FillExchangeDataIntoForm();
                 else
                     MessageBox.Show("حدث خطأ أثناء تحميل معلومات الصرف يرجى المحاولة لاحقاَ", "Message Box",
@@ -138,8 +138,8 @@ namespace transportation_system.Monthly_Exchange
                         MessageBoxDefaultButton.Button1,
                         MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
             }
-            else 
-               
+            else
+
                 lblHeader.Text = "اضافة صرف شهري";
         }
 

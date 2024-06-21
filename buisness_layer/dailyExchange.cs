@@ -39,6 +39,7 @@ namespace buisness_layer
             this.DailyRepair = exchange.DailyRepair;
             this.Date = exchange.Date;
             this.MiscCost = exchange.MiscCost;
+            this.BusNumber = exchange.BusNumber;
             mode = enMode.update; 
         }
 
