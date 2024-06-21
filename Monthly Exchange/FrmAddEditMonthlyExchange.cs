@@ -139,7 +139,6 @@ namespace transportation_system.Monthly_Exchange
                         MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
             }
             else
-
                 lblHeader.Text = "اضافة صرف شهري";
         }
 
