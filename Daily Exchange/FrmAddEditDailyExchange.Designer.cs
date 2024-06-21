@@ -52,6 +52,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNetAmount = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,10 +69,11 @@
             // 
             // btnSave
             // 
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(909, 515);
+            this.btnSave.Location = new System.Drawing.Point(807, 521);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(164, 65);
+            this.btnSave.Size = new System.Drawing.Size(119, 65);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "حفظ";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -310,6 +312,18 @@
             this.label9.TabIndex = 35;
             this.label9.Text = "د.أ";
             // 
+            // btnClear
+            // 
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(932, 521);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(159, 65);
+            this.btnClear.TabIndex = 36;
+            this.btnClear.Text = "مسح الكل";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // FrmAddEditDailyExchange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -317,6 +331,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1119, 648);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtNetAmount);
             this.Controls.Add(this.miscCostValue);
@@ -379,5 +394,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label txtNetAmount;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnClear;
     }
 }

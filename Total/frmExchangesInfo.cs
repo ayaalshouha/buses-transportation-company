@@ -24,9 +24,9 @@ namespace transportation_system.Total
 
         private void frmExchangesInfo_Load(object sender, EventArgs e)
         {
-            // upload options from daily exchange data 
-           //read data required 
-           
+            // upload options from daily exchange data and monthly exchange data
+            
+           // comboBox1.Items.Add(""); 
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

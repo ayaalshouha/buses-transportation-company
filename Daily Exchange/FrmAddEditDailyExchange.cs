@@ -107,13 +107,8 @@ namespace transportation_system.Daily_Exchange
             }
             if(MessageBox.Show("هل أنت متأكد أنك تريد الحفظ؟", "Message Box", MessageBoxButtons.YesNo, MessageBoxIcon.Question,MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
             {
-                int busNumber = rdBusOne.Checked? 1 : 2;
-
-                
-
                 if(mode == enMode.add)
                     exchange = new dailyExchange();
-
 
                 _AssignInsertedDataToExchange();
                 if (exchange.Save())
@@ -121,7 +116,6 @@ namespace transportation_system.Daily_Exchange
                     MessageBox.Show("تم حفظ البيانات بنجاح.", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                     ResetVisibleElement();
                     txtNetAmount.Text = exchange.NetAmount.ToString();
-                    btnSave.Enabled = false;
                     exchangeID = exchange.ID; 
                 }
                 else
@@ -129,6 +123,22 @@ namespace transportation_system.Daily_Exchange
             }
             else
                 MessageBox.Show("تم إلغاء العملية بنجاح", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            totalAmount.Text = string.Empty;
+            fuelValue.Text = string.Empty;
+            repairValue.Text = string.Empty;
+            companyValue.Text = string.Empty;
+            workerPayValue.Text = string.Empty;
+            miscCostValue.Text = string.Empty;
+
+            if (mode == enMode.add)
+            {
+                SetVisibleElements();
+                exchange = null;
+            }
         }
     }
 }
