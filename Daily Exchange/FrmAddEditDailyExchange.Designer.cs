@@ -109,7 +109,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(47, 244);
+            this.label3.Location = new System.Drawing.Point(313, 278);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label3.Size = new System.Drawing.Size(221, 37);
@@ -120,7 +120,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(47, 303);
+            this.label4.Location = new System.Drawing.Point(376, 160);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(158, 37);
@@ -131,7 +131,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(47, 362);
+            this.label5.Location = new System.Drawing.Point(367, 221);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(167, 37);
@@ -154,9 +154,9 @@
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(95, 540);
+            this.dateTimePicker1.Location = new System.Drawing.Point(24, 540);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(163, 30);
+            this.dateTimePicker1.Size = new System.Drawing.Size(242, 30);
             this.dateTimePicker1.TabIndex = 8;
             this.dateTimePicker1.Value = new System.DateTime(2024, 6, 4, 22, 28, 54, 0);
             // 
@@ -250,28 +250,28 @@
             // 
             // repairValue
             // 
-            this.repairValue.Location = new System.Drawing.Point(323, 249);
+            this.repairValue.Location = new System.Drawing.Point(95, 280);
             this.repairValue.Mask = "00000";
             this.repairValue.Name = "repairValue";
-            this.repairValue.Size = new System.Drawing.Size(163, 26);
+            this.repairValue.Size = new System.Drawing.Size(163, 32);
             this.repairValue.TabIndex = 29;
             this.repairValue.ValidatingType = typeof(int);
             // 
             // workerPayValue
             // 
-            this.workerPayValue.Location = new System.Drawing.Point(323, 308);
+            this.workerPayValue.Location = new System.Drawing.Point(95, 162);
             this.workerPayValue.Mask = "00000";
             this.workerPayValue.Name = "workerPayValue";
-            this.workerPayValue.Size = new System.Drawing.Size(163, 26);
+            this.workerPayValue.Size = new System.Drawing.Size(163, 32);
             this.workerPayValue.TabIndex = 30;
             this.workerPayValue.ValidatingType = typeof(int);
             // 
             // companyValue
             // 
-            this.companyValue.Location = new System.Drawing.Point(323, 367);
+            this.companyValue.Location = new System.Drawing.Point(95, 223);
             this.companyValue.Mask = "00000";
             this.companyValue.Name = "companyValue";
-            this.companyValue.Size = new System.Drawing.Size(163, 26);
+            this.companyValue.Size = new System.Drawing.Size(163, 32);
             this.companyValue.TabIndex = 31;
             this.companyValue.ValidatingType = typeof(int);
             // 
@@ -290,9 +290,15 @@
             this.groupBox1.Controls.Add(this.txtRepairNotes);
             this.groupBox1.Controls.Add(this.rdBusThree);
             this.groupBox1.Controls.Add(this.rdBusOne);
+            this.groupBox1.Controls.Add(this.workerPayValue);
+            this.groupBox1.Controls.Add(this.companyValue);
             this.groupBox1.Controls.Add(this.rdBusTwo);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.repairValue);
             this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(37, 85);
             this.groupBox1.Name = "groupBox1";
@@ -377,18 +383,12 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtNetAmount);
             this.Controls.Add(this.miscCostValue);
-            this.Controls.Add(this.companyValue);
-            this.Controls.Add(this.workerPayValue);
-            this.Controls.Add(this.repairValue);
             this.Controls.Add(this.fuelValue);
             this.Controls.Add(this.totalAmount);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblNetAmount);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSave);

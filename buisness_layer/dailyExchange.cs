@@ -21,7 +21,7 @@ namespace buisness_layer
         public double DailyFuel { get; set; }
         public DateTime Date { get; set; }
         public double MiscCost {  get; set; }
-        public string RerpairNotes { get; set; }
+        public string RepairNotes { get; set; }
         public double NetAmount
         {
             get
@@ -41,6 +41,7 @@ namespace buisness_layer
             this.Date = exchange.Date;
             this.MiscCost = exchange.MiscCost;
             this.BusNumber = exchange.BusNumber;
+            this.RepairNotes = exchange.RepairNotes; 
             mode = enMode.update; 
         }
 
@@ -55,6 +56,7 @@ namespace buisness_layer
             this.DailyRepair = -1;
             this.Date = DateTime.Now;
             this.MiscCost = -1;
+            this.RepairNotes = string.Empty; 
             this.mode = enMode.add;
         }
 
@@ -86,6 +88,7 @@ namespace buisness_layer
                 BusNumber = this.BusNumber,
                 DailyRepair = this.DailyRepair,
                 MiscCost = this.MiscCost,
+                RepairNotes = this.RepairNotes,
                 Date= this.Date,
             };
             this.ID = dailyExchange_data.Add(exchange);
@@ -103,6 +106,7 @@ namespace buisness_layer
                 BusNumber = this.BusNumber,
                 DailyRepair = this.DailyRepair,
                 MiscCost = this.MiscCost,
+                RepairNotes = this.RepairNotes, 
                 Date = this.Date,
             };
 
