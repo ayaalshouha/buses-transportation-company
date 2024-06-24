@@ -21,6 +21,7 @@ namespace data_layer
         public double DailyFuel { get; set; }
         public DateTime Date { get; set; }
         public double MiscCost {  get; set; }
+        public string RepairNotes {  get; set; }
     }
     public struct stMonthlyExchange
     {

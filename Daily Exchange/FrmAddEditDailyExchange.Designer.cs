@@ -50,10 +50,12 @@
             this.companyValue = new System.Windows.Forms.MaskedTextBox();
             this.miscCostValue = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdBusThree = new System.Windows.Forms.RadioButton();
             this.txtNetAmount = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
-            this.rdBusThree = new System.Windows.Forms.RadioButton();
+            this.txtRepairNotes = new System.Windows.Forms.RichTextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +75,7 @@
             // 
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(807, 521);
+            this.btnSave.Location = new System.Drawing.Point(818, 604);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(119, 65);
             this.btnSave.TabIndex = 1;
@@ -152,9 +154,9 @@
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(323, 542);
+            this.dateTimePicker1.Location = new System.Drawing.Point(95, 540);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(180, 30);
+            this.dateTimePicker1.Size = new System.Drawing.Size(163, 30);
             this.dateTimePicker1.TabIndex = 8;
             this.dateTimePicker1.Value = new System.DateTime(2024, 6, 4, 22, 28, 54, 0);
             // 
@@ -162,7 +164,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(47, 539);
+            this.label7.Location = new System.Drawing.Point(428, 533);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(106, 37);
@@ -174,7 +176,7 @@
             this.rdBusOne.AutoSize = true;
             this.rdBusOne.Checked = true;
             this.rdBusOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBusOne.Location = new System.Drawing.Point(196, 401);
+            this.rdBusOne.Location = new System.Drawing.Point(188, 395);
             this.rdBusOne.Name = "rdBusOne";
             this.rdBusOne.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.rdBusOne.Size = new System.Drawing.Size(78, 33);
@@ -187,7 +189,7 @@
             // 
             this.rdBusTwo.AutoSize = true;
             this.rdBusTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBusTwo.Location = new System.Drawing.Point(110, 401);
+            this.rdBusTwo.Location = new System.Drawing.Point(102, 395);
             this.rdBusTwo.Name = "rdBusTwo";
             this.rdBusTwo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.rdBusTwo.Size = new System.Drawing.Size(80, 33);
@@ -284,16 +286,32 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.txtRepairNotes);
             this.groupBox1.Controls.Add(this.rdBusThree);
             this.groupBox1.Controls.Add(this.rdBusOne);
             this.groupBox1.Controls.Add(this.rdBusTwo);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(37, 85);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(544, 535);
+            this.groupBox1.Size = new System.Drawing.Size(544, 598);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "المعلومات";
+            // 
+            // rdBusThree
+            // 
+            this.rdBusThree.AutoSize = true;
+            this.rdBusThree.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdBusThree.Location = new System.Drawing.Point(16, 395);
+            this.rdBusThree.Name = "rdBusThree";
+            this.rdBusThree.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rdBusThree.Size = new System.Drawing.Size(82, 33);
+            this.rdBusThree.TabIndex = 37;
+            this.rdBusThree.Text = "الثالث";
+            this.rdBusThree.UseVisualStyleBackColor = true;
             // 
             // txtNetAmount
             // 
@@ -321,7 +339,7 @@
             // 
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(932, 521);
+            this.btnClear.Location = new System.Drawing.Point(943, 604);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(159, 65);
             this.btnClear.TabIndex = 36;
@@ -329,17 +347,24 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // rdBusThree
+            // txtRepairNotes
             // 
-            this.rdBusThree.AutoSize = true;
-            this.rdBusThree.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBusThree.Location = new System.Drawing.Point(24, 401);
-            this.rdBusThree.Name = "rdBusThree";
-            this.rdBusThree.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rdBusThree.Size = new System.Drawing.Size(82, 33);
-            this.rdBusThree.TabIndex = 37;
-            this.rdBusThree.Text = "الثالث";
-            this.rdBusThree.UseVisualStyleBackColor = true;
+            this.txtRepairNotes.Location = new System.Drawing.Point(24, 440);
+            this.txtRepairNotes.Name = "txtRepairNotes";
+            this.txtRepairNotes.Size = new System.Drawing.Size(242, 75);
+            this.txtRepairNotes.TabIndex = 38;
+            this.txtRepairNotes.Text = "";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(274, 463);
+            this.label10.Name = "label10";
+            this.label10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label10.Size = new System.Drawing.Size(260, 37);
+            this.label10.TabIndex = 37;
+            this.label10.Text = "ملاحظات الاصلاحات: ";
             // 
             // FrmAddEditDailyExchange
             // 
@@ -347,7 +372,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1119, 648);
+            this.ClientSize = new System.Drawing.Size(1119, 695);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtNetAmount);
@@ -360,8 +385,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblNetAmount);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -413,5 +436,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.RadioButton rdBusThree;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.RichTextBox txtRepairNotes;
     }
 }

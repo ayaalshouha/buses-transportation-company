@@ -30,25 +30,26 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdBusOne = new System.Windows.Forms.RadioButton();
-            this.rdBusTwo = new System.Windows.Forms.RadioButton();
-            this.edAllBuses = new System.Windows.Forms.RadioButton();
-            this.gbBus = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dateFrom = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTo = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dateTo = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateFrom = new System.Windows.Forms.DateTimePicker();
+            this.gbBus = new System.Windows.Forms.GroupBox();
+            this.rdBusThree = new System.Windows.Forms.RadioButton();
+            this.rdBusTwo = new System.Windows.Forms.RadioButton();
+            this.rdBusOne = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lblResult = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rdAllBuses = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
-            this.gbBus.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.gbBus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,53 +79,37 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "الرجاء تحديد المطلوب";
             // 
-            // rdBusOne
+            // comboBox1
             // 
-            this.rdBusOne.AutoSize = true;
-            this.rdBusOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBusOne.Location = new System.Drawing.Point(236, 43);
-            this.rdBusOne.Name = "rdBusOne";
-            this.rdBusOne.Size = new System.Drawing.Size(134, 30);
-            this.rdBusOne.TabIndex = 17;
-            this.rdBusOne.TabStop = true;
-            this.rdBusOne.Text = "الباص الاول";
-            this.rdBusOne.UseVisualStyleBackColor = true;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(49, 69);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(188, 34);
+            this.comboBox1.TabIndex = 23;
             // 
-            // rdBusTwo
+            // label5
             // 
-            this.rdBusTwo.AutoSize = true;
-            this.rdBusTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBusTwo.Location = new System.Drawing.Point(235, 79);
-            this.rdBusTwo.Name = "rdBusTwo";
-            this.rdBusTwo.Size = new System.Drawing.Size(137, 30);
-            this.rdBusTwo.TabIndex = 18;
-            this.rdBusTwo.TabStop = true;
-            this.rdBusTwo.Text = "الباص الثاني";
-            this.rdBusTwo.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(256, 70);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(193, 29);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "اختر الصرف المطلوب:";
             // 
-            // edAllBuses
+            // btnSearch
             // 
-            this.edAllBuses.AutoSize = true;
-            this.edAllBuses.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edAllBuses.Location = new System.Drawing.Point(301, 115);
-            this.edAllBuses.Name = "edAllBuses";
-            this.edAllBuses.Size = new System.Drawing.Size(71, 30);
-            this.edAllBuses.TabIndex = 19;
-            this.edAllBuses.TabStop = true;
-            this.edAllBuses.Text = "الكل";
-            this.edAllBuses.UseVisualStyleBackColor = true;
-            // 
-            // gbBus
-            // 
-            this.gbBus.Controls.Add(this.edAllBuses);
-            this.gbBus.Controls.Add(this.rdBusTwo);
-            this.gbBus.Controls.Add(this.rdBusOne);
-            this.gbBus.Location = new System.Drawing.Point(25, 135);
-            this.gbBus.Name = "gbBus";
-            this.gbBus.Size = new System.Drawing.Size(424, 151);
-            this.gbBus.TabIndex = 20;
-            this.gbBus.TabStop = false;
-            this.gbBus.Text = "الباص";
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(25, 473);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(424, 59);
+            this.btnSearch.TabIndex = 25;
+            this.btnSearch.Text = "استفسر";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // groupBox3
             // 
@@ -139,23 +124,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "gbPeriod";
             // 
-            // dateFrom
+            // dateTo
             // 
-            this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFrom.Location = new System.Drawing.Point(97, 46);
-            this.dateFrom.Name = "dateFrom";
-            this.dateFrom.Size = new System.Drawing.Size(200, 32);
-            this.dateFrom.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(318, 46);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 29);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "من :";
+            this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTo.Location = new System.Drawing.Point(97, 88);
+            this.dateTo.Name = "dateTo";
+            this.dateTo.Size = new System.Drawing.Size(200, 32);
+            this.dateTo.TabIndex = 3;
             // 
             // label4
             // 
@@ -168,32 +143,72 @@
             this.label4.Text = "الى :";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // dateTo
+            // label3
             // 
-            this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTo.Location = new System.Drawing.Point(97, 88);
-            this.dateTo.Name = "dateTo";
-            this.dateTo.Size = new System.Drawing.Size(200, 32);
-            this.dateTo.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(318, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 29);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "من :";
             // 
-            // label5
+            // dateFrom
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(256, 70);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(193, 29);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "اختر الصرف المطلوب:";
+            this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFrom.Location = new System.Drawing.Point(97, 46);
+            this.dateFrom.Name = "dateFrom";
+            this.dateFrom.Size = new System.Drawing.Size(200, 32);
+            this.dateFrom.TabIndex = 0;
             // 
-            // comboBox1
+            // gbBus
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(49, 69);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(188, 34);
-            this.comboBox1.TabIndex = 23;
+            this.gbBus.Controls.Add(this.rdAllBuses);
+            this.gbBus.Controls.Add(this.rdBusThree);
+            this.gbBus.Controls.Add(this.rdBusTwo);
+            this.gbBus.Controls.Add(this.rdBusOne);
+            this.gbBus.Location = new System.Drawing.Point(25, 135);
+            this.gbBus.Name = "gbBus";
+            this.gbBus.Size = new System.Drawing.Size(424, 151);
+            this.gbBus.TabIndex = 20;
+            this.gbBus.TabStop = false;
+            this.gbBus.Text = "الباص";
+            // 
+            // rdBusThree
+            // 
+            this.rdBusThree.AutoSize = true;
+            this.rdBusThree.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdBusThree.Location = new System.Drawing.Point(57, 43);
+            this.rdBusThree.Name = "rdBusThree";
+            this.rdBusThree.Size = new System.Drawing.Size(140, 30);
+            this.rdBusThree.TabIndex = 19;
+            this.rdBusThree.TabStop = true;
+            this.rdBusThree.Text = "الباص الثالث";
+            this.rdBusThree.UseVisualStyleBackColor = true;
+            // 
+            // rdBusTwo
+            // 
+            this.rdBusTwo.AutoSize = true;
+            this.rdBusTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdBusTwo.Location = new System.Drawing.Point(236, 79);
+            this.rdBusTwo.Name = "rdBusTwo";
+            this.rdBusTwo.Size = new System.Drawing.Size(137, 30);
+            this.rdBusTwo.TabIndex = 18;
+            this.rdBusTwo.TabStop = true;
+            this.rdBusTwo.Text = "الباص الثاني";
+            this.rdBusTwo.UseVisualStyleBackColor = true;
+            // 
+            // rdBusOne
+            // 
+            this.rdBusOne.AutoSize = true;
+            this.rdBusOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdBusOne.Location = new System.Drawing.Point(236, 43);
+            this.rdBusOne.Name = "rdBusOne";
+            this.rdBusOne.Size = new System.Drawing.Size(134, 30);
+            this.rdBusOne.TabIndex = 17;
+            this.rdBusOne.TabStop = true;
+            this.rdBusOne.Text = "الباص الاول";
+            this.rdBusOne.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -220,19 +235,6 @@
             this.lblResult.TabIndex = 2;
             this.lblResult.Text = "[?????]";
             // 
-            // btnSearch
-            // 
-            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(25, 473);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(424, 59);
-            this.btnSearch.TabIndex = 25;
-            this.btnSearch.Text = "استفسر";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -255,6 +257,18 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // rdAllBuses
+            // 
+            this.rdAllBuses.AutoSize = true;
+            this.rdAllBuses.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdAllBuses.Location = new System.Drawing.Point(126, 79);
+            this.rdAllBuses.Name = "rdAllBuses";
+            this.rdAllBuses.Size = new System.Drawing.Size(71, 30);
+            this.rdAllBuses.TabIndex = 20;
+            this.rdAllBuses.TabStop = true;
+            this.rdAllBuses.Text = "الكل";
+            this.rdAllBuses.UseVisualStyleBackColor = true;
+            // 
             // frmExchangesInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -275,10 +289,10 @@
             this.Load += new System.EventHandler(this.frmExchangesInfo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.gbBus.ResumeLayout(false);
-            this.gbBus.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.gbBus.ResumeLayout(false);
+            this.gbBus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -289,7 +303,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox gbBus;
-        private System.Windows.Forms.RadioButton edAllBuses;
+        private System.Windows.Forms.RadioButton rdBusThree;
         private System.Windows.Forms.RadioButton rdBusTwo;
         private System.Windows.Forms.RadioButton rdBusOne;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -304,5 +318,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RadioButton rdAllBuses;
     }
 }

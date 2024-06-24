@@ -21,6 +21,7 @@ namespace buisness_layer
         public double DailyFuel { get; set; }
         public DateTime Date { get; set; }
         public double MiscCost {  get; set; }
+        public string RerpairNotes { get; set; }
         public double NetAmount
         {
             get

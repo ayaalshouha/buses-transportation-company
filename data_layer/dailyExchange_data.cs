@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -37,6 +38,7 @@ namespace data_layer
                     exchange.BusNumber = (int)reader["bus_number"];
                     exchange.Date = (DateTime)reader["date_time"];
                     exchange.MiscCost = Convert.ToDouble(reader["misc_cost"]);
+                    exchange.RepairNotes = reader["repair_notes"] == DBNull.Value ? string.Empty : (string)reader["repair_notes"];
                 }
                 reader.Close();
 
@@ -79,7 +81,8 @@ namespace data_layer
                     exchange.DailyFuel = Convert.ToDouble(reader["daily_fuel"]);
                     exchange.BusNumber = (int)reader["bus_number"];
                     exchange.Date = (DateTime)reader["date_time"];
-                    exchange.MiscCost = Convert.ToDouble(reader["misc_cost"]); 
+                    exchange.MiscCost = Convert.ToDouble(reader["misc_cost"]);
+                    exchange.RepairNotes = reader["repair_notes"] == DBNull.Value ? string.Empty : (string)reader["repair_notes"];
                 }
                 reader.Close();
 
@@ -111,6 +114,7 @@ namespace data_layer
                                  @busnumber,
                                  @datetime,
                                  @misccost,
+                                 @repairnotes,
                                  @moveID = @_ID output;
                                SELECT @_ID;";
                 
@@ -123,6 +127,13 @@ namespace data_layer
                 Command.Parameters.AddWithValue("@dailyfuel", exchange.DailyFuel);
                 Command.Parameters.AddWithValue("@busnumber", exchange.BusNumber);
                 Command.Parameters.AddWithValue("@datetime", exchange.Date);
+                
+                
+                if(exchange.RepairNotes != string.Empty)
+                    Command.Parameters.AddWithValue("@repairnotes", exchange.RepairNotes);
+                else
+                    Command.Parameters.AddWithValue("@repairnotes", DBNull.Value);
+
 
                 if (exchange.MiscCost == -1)
                     Command.Parameters.AddWithValue("@misccost", 0);
@@ -163,7 +174,8 @@ namespace data_layer
                         daily_fuel = @dailyfuel, 
                         bus_number = @busnumber,
                         date_time = @datetime,
-                        misc_cost = @misccost
+                        misc_cost = @misccost, 
+                        repair_notes = @repairnotes
                         WHERE ID = @exchangeID;";
 
 
@@ -177,6 +189,12 @@ namespace data_layer
                 Command.Parameters.AddWithValue("@busnumber", exchange.BusNumber);
                 Command.Parameters.AddWithValue("@datetime", exchange.Date);
                 Command.Parameters.AddWithValue("@misccost", exchange.MiscCost);
+
+                if (exchange.RepairNotes != string.Empty)
+                    Command.Parameters.AddWithValue("@repairnotes", exchange.RepairNotes);
+                else
+                    Command.Parameters.AddWithValue("@repairnotes", DBNull.Value);
+
                 Connection.Open();
                 RowAffected = Command.ExecuteNonQuery();
             }
