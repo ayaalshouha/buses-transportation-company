@@ -94,6 +94,7 @@ namespace transportation_system.Daily_Exchange
             exchange.CompanyPay = Convert.ToDouble(companyValue.Text);
             exchange.BusNumber = rdBusOne.Checked ? 1 : rdBusTwo.Checked ? 2 : 3;
             exchange.Date = dateTimePicker1.Value;
+            exchange.RepairNotes = txtRepairNotes.Text;
             exchange.MiscCost = Convert.ToDouble(miscCostValue.Text);
         }
 
@@ -138,6 +139,7 @@ namespace transportation_system.Daily_Exchange
             companyValue.Text = string.Empty;
             workerPayValue.Text = string.Empty;
             miscCostValue.Text = string.Empty;
+            txtRepairNotes.Text = string.Empty;
 
             if (mode == enMode.add)
             {
