@@ -42,6 +42,8 @@ namespace transportation_system.Daily_Exchange
                 dateTimePicker1.Value = exchange.Date;
                 txtNetAmount.Text = exchange.NetAmount.ToString();
 
+                txtRepairNotes.Text = exchange.RepairNotes.ToString();
+
                 switch (exchange.BusNumber)
                 {
                     case 1:
