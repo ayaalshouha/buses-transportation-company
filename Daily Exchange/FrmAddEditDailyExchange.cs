@@ -1,12 +1,5 @@
 ﻿using buisness_layer;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace transportation_system.Daily_Exchange
@@ -46,14 +39,24 @@ namespace transportation_system.Daily_Exchange
                 workerPayValue.Text = exchange.WorkerPay.ToString();
                 companyValue.Text = exchange.CompanyPay.ToString();
                 miscCostValue.Text = exchange.MiscCost.ToString();
-
-                if (exchange.BusNumber == 1)
-                    rdBusOne.Checked = true; 
-                else
-                    rdBusTwo.Checked = true;
-
                 dateTimePicker1.Value = exchange.Date;
-                txtNetAmount.Text = exchange.NetAmount.ToString(); 
+                txtNetAmount.Text = exchange.NetAmount.ToString();
+
+                switch (exchange.BusNumber)
+                {
+                    case 1:
+                        rdBusOne.Checked = true;
+                        break;
+                    case 2:
+                        rdBusTwo.Checked = true;
+                        break;
+                    case 3:
+                        rdBusThree.Checked = true;
+                        break;
+                    default:
+                        rdBusOne.Checked = true;
+                        break;
+                }
             }
         }
 
@@ -87,7 +90,7 @@ namespace transportation_system.Daily_Exchange
             exchange.DailyRepair = Convert.ToDouble(repairValue.Text);
             exchange.WorkerPay = Convert.ToDouble(workerPayValue.Text);
             exchange.CompanyPay = Convert.ToDouble(companyValue.Text);
-            exchange.BusNumber = rdBusOne.Checked ? 1 : 2;
+            exchange.BusNumber = rdBusOne.Checked ? 1 : rdBusTwo.Checked ? 2 : 3;
             exchange.Date = dateTimePicker1.Value;
             exchange.MiscCost = Convert.ToDouble(miscCostValue.Text);
         }
@@ -95,7 +98,7 @@ namespace transportation_system.Daily_Exchange
         private void btnSave_Click(object sender, EventArgs e)
         {
             DateTime date = dateTimePicker1.Value.Date;
-            int busnumber = rdBusOne.Checked ? 1 : 2; 
+            int busnumber = rdBusOne.Checked ? 1 : rdBusTwo.Checked? 2 : 3; 
 
             if (mode == enMode.add)
             {

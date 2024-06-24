@@ -53,7 +53,9 @@
             this.txtNetAmount = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
+            this.rdBusThree = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -172,7 +174,7 @@
             this.rdBusOne.AutoSize = true;
             this.rdBusOne.Checked = true;
             this.rdBusOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBusOne.Location = new System.Drawing.Point(322, 486);
+            this.rdBusOne.Location = new System.Drawing.Point(196, 401);
             this.rdBusOne.Name = "rdBusOne";
             this.rdBusOne.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.rdBusOne.Size = new System.Drawing.Size(78, 33);
@@ -185,7 +187,7 @@
             // 
             this.rdBusTwo.AutoSize = true;
             this.rdBusTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBusTwo.Location = new System.Drawing.Point(406, 486);
+            this.rdBusTwo.Location = new System.Drawing.Point(110, 401);
             this.rdBusTwo.Name = "rdBusTwo";
             this.rdBusTwo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.rdBusTwo.Size = new System.Drawing.Size(80, 33);
@@ -282,6 +284,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rdBusThree);
+            this.groupBox1.Controls.Add(this.rdBusOne);
+            this.groupBox1.Controls.Add(this.rdBusTwo);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(37, 85);
             this.groupBox1.Name = "groupBox1";
@@ -324,6 +329,18 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // rdBusThree
+            // 
+            this.rdBusThree.AutoSize = true;
+            this.rdBusThree.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdBusThree.Location = new System.Drawing.Point(24, 401);
+            this.rdBusThree.Name = "rdBusThree";
+            this.rdBusThree.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rdBusThree.Size = new System.Drawing.Size(82, 33);
+            this.rdBusThree.TabIndex = 37;
+            this.rdBusThree.Text = "الثالث";
+            this.rdBusThree.UseVisualStyleBackColor = true;
+            // 
             // FrmAddEditDailyExchange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -343,8 +360,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblNetAmount);
-            this.Controls.Add(this.rdBusTwo);
-            this.Controls.Add(this.rdBusOne);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label6);
@@ -363,6 +378,8 @@
             this.Text = "اضافة/تعديل صرف يومي";
             this.Load += new System.EventHandler(this.FrmAddEditDailyExchange_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -395,5 +412,6 @@
         private System.Windows.Forms.Label txtNetAmount;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.RadioButton rdBusThree;
     }
 }

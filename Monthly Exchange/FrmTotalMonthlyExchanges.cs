@@ -1,12 +1,6 @@
 ﻿using buisness_layer;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using transportation_system.Daily_Exchange;
 
@@ -21,7 +15,7 @@ namespace transportation_system.Monthly_Exchange
         }
         private void _renameHeaders()
         {
-            if(dataGridView1.Rows.Count > 0)
+            if(dataGridView1.ColumnCount > 0)
             {
                 dataGridView1.Columns[0].Width = 40;
                 dataGridView1.Columns[1].HeaderText = "المبلغ كامل";

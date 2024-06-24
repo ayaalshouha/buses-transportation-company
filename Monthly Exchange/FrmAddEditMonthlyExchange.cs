@@ -1,12 +1,6 @@
 ﻿using buisness_layer;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace transportation_system.Monthly_Exchange
@@ -62,7 +56,6 @@ namespace transportation_system.Monthly_Exchange
         }
         private void _RetrieveData()
         {
-            //صافي المبلغ لتوزيع النسب مع النسب
             txtNetAmount.Text = exchange.NetAmount.ToString();
             akefPercent.Text = exchange.AkefPercent.ToString();
             waleedPercent.Text = exchange.WaleedPercent.ToString();
@@ -77,7 +70,6 @@ namespace transportation_system.Monthly_Exchange
             {
                 if (_Mode == enMode.add)
                     exchange = new monthlyExchange();
-
 
                 _AssignInsertedDataToExchange();
 
@@ -103,9 +95,7 @@ namespace transportation_system.Monthly_Exchange
                 e.Cancel = true;
             }
             else
-            {
                 errorProvider1.SetError(txtSalary, "");
-            }
         }
         private void _FillExchangeDataIntoForm()
         {
@@ -145,25 +135,17 @@ namespace transportation_system.Monthly_Exchange
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             lblNote.Visible = false;
-
             // check if already exist by month 
             int month = dateTimePicker1.Value.Month;
             if (_Mode == enMode.add && monthlyExchange.isExist(month))
-            {
                 MessageBox.Show("الشهر المحدد موجود مسبقاً !! ", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
-                return;
-            }
             else
             {
                 totalAmountPerMonth.Text = monthlyExchange.TotalAmountPerMonth(dateTimePicker1.Value).ToString();
                 if (Convert.ToDouble(totalAmountPerMonth.Text) > 0)
                     _EnableElements();
                 else
-                {
                     lblNote.Visible = true;
-                    return;
-                }
-
             }
         }
     }
