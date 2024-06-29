@@ -1,47 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace data_layer
 {
-    public class total_data
+    public static class total_data
     {
-        public static double getTotalOf_PerMonth(enSection section, int month, int year, int busNumber)
+        public static double getSumOf(string q, DateTime fromdate, DateTime todate, int busNumber)
         {
-            double total = -1;
-
-            var columnMapping = new Dictionary<enSection, string>
-            {
-                { enSection.total, "worker_pay" },
-                {enSection.net, "amount_left" },
-                { enSection.repair, "daily_repair" },
-                    { enSection.fuel, "daily_fuel" },
-                    { enSection.worker, "worker_pay" },
-                    { enSection.company, "company_pay" },
-
-            };
-
-            if (!columnMapping.TryGetValue(section, out string sectionName))
-            {
-                throw new ArgumentException("Invalid section");
-            }
-
+            double total = 0;
             SqlConnection connection = new SqlConnection(DataSetting.ConnectionString);
             try
             {
-                string query = @"SELECT SUM(sectionName) FROM daily_exchange
-                    WHERE year(date_time) = @year
-                     AND month(date_time) = @month 
-                     AND bus_number = @busnumber;";
+                string query = q;
 
                 SqlCommand command = new SqlCommand(query, connection);
-
-                command.Parameters.AddWithValue("@sectionName", sectionName);
-                command.Parameters.AddWithValue("@year", year);
-                command.Parameters.AddWithValue("@month", month);
+                command.Parameters.AddWithValue("@fromdate", fromdate);
+                command.Parameters.AddWithValue("@todate", todate);
                 command.Parameters.AddWithValue("@busnumber", busNumber);
 
                 object result = command.ExecuteScalar();
@@ -61,8 +35,6 @@ namespace data_layer
 
             return total;
         }
-        
-        
         public static double TotalBackupAmount()
         {
             double total_backup = 0;
@@ -83,7 +55,6 @@ namespace data_layer
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                //DataSettings.StoreUsingEventLogs(ex.Message.ToString());
             }
             finally
             {
