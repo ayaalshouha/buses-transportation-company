@@ -1,0 +1,28 @@
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Release\transportation system.exe.config
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Release\transportation system.exe
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Release\transportation system.pdb
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Release\buisness_layer.dll
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Release\data_type_layer.dll
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Release\data_layer.dll
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Release\buisness_layer.pdb
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Release\data_type_layer.pdb
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Release\data_layer.pdb
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Release\transportation system.csproj.AssemblyReference.cache
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Release\transportation_system.Daily_Exchange.FrmAddEditDailyExchange.resources
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Release\transportation_system.Daily_Exchange.FrmTotalDailyExchanges.resources
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Release\transportation_system.Form1.resources
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Release\transportation_system.frmBackupAmount.resources
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Release\transportation_system.Monthly_Exchange.FrmAddEditMonthlyExchange.resources
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Release\transportation_system.Monthly_Exchange.FrmTotalMonthlyExchanges.resources
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Release\transportation_system.Properties.Resources.resources
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Release\transportation_system.Total.frmExchangesInfo.resources
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Release\transportation system.csproj.GenerateResource.cache
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Release\transportation system.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Release\transportation system.csproj.CopyComplete
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Release\transportation system.exe
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Release\transportation system.pdb
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Release\transportation system.exe.manifest
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Release\transportation system.application
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Release\transportation system.TrustInfo.xml
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Release\transportation system.exe.manifest
+C:\Users\lenovo\Desktop\Coding\transportation system\obj\Release\transportation system.application
