@@ -4,3 +4,6 @@ C:\Users\lenovo\Desktop\Coding\transportation system\data_layer\obj\Debug\data_l
 C:\Users\lenovo\Desktop\Coding\transportation system\data_layer\obj\Debug\data_layer.csproj.CoreCompileInputs.cache
 C:\Users\lenovo\Desktop\Coding\transportation system\data_layer\obj\Debug\data_layer.dll
 C:\Users\lenovo\Desktop\Coding\transportation system\data_layer\obj\Debug\data_layer.pdb
+C:\Users\lenovo\Desktop\Coding\transportation system\data_layer\bin\Debug\data_type_layer.dll
+C:\Users\lenovo\Desktop\Coding\transportation system\data_layer\bin\Debug\data_type_layer.pdb
+C:\Users\lenovo\Desktop\Coding\transportation system\data_layer\obj\Debug\data_layer.csproj.CopyComplete

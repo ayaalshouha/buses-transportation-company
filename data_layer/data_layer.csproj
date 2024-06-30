@@ -47,5 +47,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="total_data.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\data_type_layer\data_type_layer.csproj">
+      <Project>{5fb188ce-ca86-48a4-99a0-afc5261e9e8f}</Project>
+      <Name>data_type_layer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

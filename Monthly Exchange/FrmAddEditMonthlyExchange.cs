@@ -7,20 +7,19 @@ namespace transportation_system.Monthly_Exchange
 {
     public partial class FrmAddEditMonthlyExchange : Form
     {
-        private enum enMode { add, update };
-        private enMode _Mode = enMode.add;
+        private data_type_layer.enMode _Mode; 
         private monthlyExchange exchange = null;
         private int exchange_id = -1;
         public FrmAddEditMonthlyExchange(int exchangeID = -1)
         {
             InitializeComponent();
             exchange_id = exchangeID;
-            _Mode = exchange_id == -1 ? enMode.add : enMode.update;
+            _Mode = exchange_id == -1 ? data_type_layer.enMode.add : data_type_layer.enMode.update;
         }
 
         private void _DisableElements()
         {
-            if (_Mode == enMode.add)
+            if (_Mode == data_type_layer.enMode.add)
             {
                 txtBackup.Enabled = false;
                 txtSalary.Enabled = false;
@@ -68,7 +67,7 @@ namespace transportation_system.Monthly_Exchange
 
             if (MessageBox.Show("هل انت متأكد انك تريد الحفظ؟", "Message Box", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
             {
-                if (_Mode == enMode.add)
+                if (_Mode == data_type_layer.enMode.add)
                     exchange = new monthlyExchange();
 
                 _AssignInsertedDataToExchange();
@@ -99,7 +98,7 @@ namespace transportation_system.Monthly_Exchange
         }
         private void _FillExchangeDataIntoForm()
         {
-            if (exchange != null && _Mode == enMode.update)
+            if (exchange != null && _Mode == data_type_layer.enMode.update)
             {
                 totalAmountPerMonth.Text = exchange.TotalAmount.ToString();
                 dateTimePicker1.Value = exchange.Date;
@@ -116,7 +115,7 @@ namespace transportation_system.Monthly_Exchange
         {
             _DisableElements();
 
-            if (_Mode == enMode.update)
+            if (_Mode == data_type_layer.enMode.update)
             {
                 lblHeader.Text = "تعديل صرف شهري";
                 exchange = monthlyExchange.Find(exchange_id);
@@ -137,7 +136,7 @@ namespace transportation_system.Monthly_Exchange
             lblNote.Visible = false;
             // check if already exist by month 
             int month = dateTimePicker1.Value.Month;
-            if (_Mode == enMode.add && monthlyExchange.isExist(month))
+            if (_Mode == data_type_layer.enMode.add && monthlyExchange.isExist(month))
                 MessageBox.Show("الشهر المحدد موجود مسبقاً !! ", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
             else
             {

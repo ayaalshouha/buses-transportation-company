@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace data_layer
 {
     public static class dailyExchange_data
     {
-        public static bool getExchange(int ExchID, ref stDailyExchange exchange)
+        public static bool getExchange(int ExchID, ref data_type_layer.stDailyExchange exchange)
         {
             bool isFound = false;
             SqlConnection connection = new SqlConnection(DataSetting.ConnectionString);
@@ -53,7 +47,7 @@ namespace data_layer
             }
             return isFound;
         }
-        public static bool getExchangeByDate_BusNumber(DateTime date, int busNumber, ref stDailyExchange exchange)
+        public static bool getExchangeByDate_BusNumber(DateTime date, int busNumber, ref data_type_layer.stDailyExchange exchange)
         {
             bool isFound = false;
             SqlConnection connection = new SqlConnection(DataSetting.ConnectionString);
@@ -97,7 +91,7 @@ namespace data_layer
             }
             return isFound;
         }
-        public static int Add(stDailyExchange exchange)
+        public static int Add(data_type_layer.stDailyExchange exchange)
         {
             int newID = -1;
 
@@ -160,7 +154,7 @@ namespace data_layer
 
             return newID;
         }
-        public static bool Update(stDailyExchange exchange)
+        public static bool Update(data_type_layer.stDailyExchange exchange)
         {
             int RowAffected = 0;
             SqlConnection Connection = new SqlConnection(DataSetting.ConnectionString);

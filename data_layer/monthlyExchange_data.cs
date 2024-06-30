@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text;
-using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace data_layer
 {
     public class monthlyExchange_data
     {
-        public static bool getExchange(int ExchID, ref stMonthlyExchange exchange)
+        public static bool getExchange(int ExchID, ref data_type_layer.stMonthlyExchange exchange)
         {
             bool isFound = false;
             SqlConnection connection = new SqlConnection(DataSetting.ConnectionString);
@@ -52,8 +46,7 @@ namespace data_layer
             return isFound;
 
         }
-
-        public static bool getExchangeByMonthYear(int month, int year, ref stMonthlyExchange exchange)
+        public static bool getExchangeByMonthYear(int month, int year, ref data_type_layer.stMonthlyExchange exchange)
         {
             bool isFound = false;
             SqlConnection connection = new SqlConnection(DataSetting.ConnectionString);
@@ -94,7 +87,7 @@ namespace data_layer
             return isFound;
 
         }
-        public static int Add(stMonthlyExchange exchange)
+        public static int Add(data_type_layer.stMonthlyExchange exchange)
         {
             int newID = -1;
 
@@ -132,7 +125,7 @@ namespace data_layer
 
             return newID;
         }
-        public static bool Update(stMonthlyExchange exchange)
+        public static bool Update(data_type_layer.stMonthlyExchange exchange)
         {
             int RowAffected = 0;
             SqlConnection Connection = new SqlConnection(DataSetting.ConnectionString);
@@ -384,7 +377,6 @@ namespace data_layer
             return totalAmount;
 
         }
-
         public static DataTable getAllExchanges()
         {
             DataTable dt = new DataTable();

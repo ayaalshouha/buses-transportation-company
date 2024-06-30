@@ -12,8 +12,7 @@ namespace buisness_layer
 {
     public class monthlyExchange
     {
-        private enum enMode { add, update }
-        private enMode mode = enMode.add; 
+        private data_type_layer.enMode mode;
         public int ID { get; set; }
         public double TotalAmount { get; set; }
         public double WorkerSalary { get; set; }
@@ -47,14 +46,14 @@ namespace buisness_layer
             } 
         }
 
-        private monthlyExchange(stMonthlyExchange exchange)
+        private monthlyExchange(data_type_layer.stMonthlyExchange exchange)
         {
             this.ID = exchange.ID;
             this.TotalAmount = exchange.TotalAmountPerMonth; 
             this.BackupAmount = exchange.BackupAmount;
             this.Date = exchange.Date;
             this.WorkerSalary = exchange.WorkerSalary; 
-            mode = enMode.update; 
+            mode = data_type_layer.enMode.update; 
         }
         public monthlyExchange()
         {
@@ -63,11 +62,11 @@ namespace buisness_layer
             this.BackupAmount = -1;
             this.Date = DateTime.MinValue;
             this.WorkerSalary = -1;
-            this.mode = enMode.add; 
+            this.mode = data_type_layer.enMode.add; 
         }
         public static monthlyExchange Find(int exchID)
         {
-            stMonthlyExchange exchange = new stMonthlyExchange();
+            data_type_layer.stMonthlyExchange exchange = new data_type_layer.stMonthlyExchange();
             if (monthlyExchange_data.getExchange(exchID, ref exchange))
                 return new monthlyExchange(exchange);
             else
@@ -75,7 +74,7 @@ namespace buisness_layer
         }
         public static monthlyExchange Find(int month, int year )
         {
-            stMonthlyExchange exchange = new stMonthlyExchange();
+            data_type_layer.stMonthlyExchange exchange = new data_type_layer.stMonthlyExchange();
             if (monthlyExchange_data.getExchangeByMonthYear(month, year, ref exchange))
                 return new monthlyExchange(exchange);
             else
@@ -83,7 +82,7 @@ namespace buisness_layer
         }
         private bool _Add()
         {
-            stMonthlyExchange exchange = new stMonthlyExchange
+            data_type_layer.stMonthlyExchange exchange = new data_type_layer.stMonthlyExchange
             {
                 ID = this.ID,
                 BackupAmount = this.BackupAmount,
@@ -97,7 +96,7 @@ namespace buisness_layer
 
         private bool _Update()
         {
-            stMonthlyExchange exchange = new stMonthlyExchange
+            data_type_layer.stMonthlyExchange exchange = new data_type_layer.stMonthlyExchange
             {
                 ID = this.ID,
                 TotalAmountPerMonth = this.TotalAmount,
@@ -112,14 +111,14 @@ namespace buisness_layer
         {
             switch (mode)
             {
-                case enMode.add:
+                case data_type_layer.enMode.add:
                     if (_Add())
                     {
-                        this.mode = enMode.update;
+                        this.mode = data_type_layer.enMode.update;
                         return true;
                     }
                     break;
-                case enMode.update:
+                case data_type_layer.enMode.update:
                     return _Update();
             }
 

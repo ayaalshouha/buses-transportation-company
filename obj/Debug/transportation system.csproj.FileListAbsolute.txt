@@ -19,3 +19,5 @@ C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation_sy
 C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation_system.Daily_Exchange.FrmTotalDailyExchanges.resources
 C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation_system.Monthly_Exchange.FrmTotalMonthlyExchanges.resources
 C:\Users\lenovo\Desktop\Coding\transportation system\obj\Debug\transportation_system.Total.frmExchangesInfo.resources
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Debug\data_type_layer.dll
+C:\Users\lenovo\Desktop\Coding\transportation system\bin\Debug\data_type_layer.pdb

@@ -6,8 +6,7 @@ namespace transportation_system.Daily_Exchange
 {
     public partial class FrmAddEditDailyExchange : Form
     {
-        private enum enMode { add, update}
-        private enMode mode = enMode.add;
+        private data_type_layer.enMode mode;
         private dailyExchange exchange = null; 
         private int exchangeID = -1;
 
@@ -15,7 +14,7 @@ namespace transportation_system.Daily_Exchange
         {
             InitializeComponent();
             exchangeID = Exchange_ID; 
-            mode = exchangeID == -1 ? enMode.add : enMode.update;
+            mode = exchangeID == -1 ? data_type_layer.enMode.add : data_type_layer.enMode.update;
         }
         private void SetVisibleElements()
         {
@@ -31,7 +30,7 @@ namespace transportation_system.Daily_Exchange
         }
         private void _FillExchangeDataIntoForm()
         {
-            if(exchange != null && mode == enMode.update)
+            if(exchange != null && mode == data_type_layer.enMode.update)
             {
                 totalAmount.Text = exchange.TotalAmount.ToString(); 
                 fuelValue.Text  = exchange.DailyFuel.ToString();
@@ -64,7 +63,7 @@ namespace transportation_system.Daily_Exchange
 
         private void FrmAddEditDailyExchange_Load(object sender, EventArgs e)
         {
-            if(mode == enMode.update)
+            if(mode == data_type_layer.enMode.update)
             {
                 lblHeader.Text = "تعديل صرف يومي";
                 ResetVisibleElement();
@@ -103,7 +102,7 @@ namespace transportation_system.Daily_Exchange
             DateTime date = dateTimePicker1.Value.Date;
             int busnumber = rdBusOne.Checked ? 1 : rdBusTwo.Checked? 2 : 3; 
 
-            if (mode == enMode.add)
+            if (mode == data_type_layer.enMode.add)
             {
                 if(dailyExchange.isExist(date, busnumber))
                 {
@@ -113,7 +112,7 @@ namespace transportation_system.Daily_Exchange
             }
             if(MessageBox.Show("هل أنت متأكد أنك تريد الحفظ؟", "Message Box", MessageBoxButtons.YesNo, MessageBoxIcon.Question,MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
             {
-                if(mode == enMode.add)
+                if(mode == data_type_layer.enMode.add)
                     exchange = new dailyExchange();
 
                 _AssignInsertedDataToExchange();
@@ -141,7 +140,7 @@ namespace transportation_system.Daily_Exchange
             miscCostValue.Text = string.Empty;
             txtRepairNotes.Text = string.Empty;
 
-            if (mode == enMode.add)
+            if (mode == data_type_layer.enMode.add)
             {
                 SetVisibleElements();
                 exchange = null;

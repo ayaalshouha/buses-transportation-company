@@ -7,3 +7,5 @@ C:\Users\lenovo\Desktop\Coding\transportation system\buisness_layer\obj\Debug\bu
 C:\Users\lenovo\Desktop\Coding\transportation system\buisness_layer\obj\Debug\buisness_layer.csproj.CopyComplete
 C:\Users\lenovo\Desktop\Coding\transportation system\buisness_layer\obj\Debug\buisness_layer.dll
 C:\Users\lenovo\Desktop\Coding\transportation system\buisness_layer\obj\Debug\buisness_layer.pdb
+C:\Users\lenovo\Desktop\Coding\transportation system\buisness_layer\bin\Debug\data_type_layer.dll
+C:\Users\lenovo\Desktop\Coding\transportation system\buisness_layer\bin\Debug\data_type_layer.pdb

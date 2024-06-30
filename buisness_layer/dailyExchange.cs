@@ -10,8 +10,7 @@ namespace buisness_layer
 {
     public class dailyExchange
     {
-        private enum enMode { add, update }
-        private enMode mode = enMode.add; 
+        private data_type_layer.enMode mode; 
         public int ID { get; set; }
         public double TotalAmount { get; set; }
         public double DailyRepair { get; set; }
@@ -30,7 +29,7 @@ namespace buisness_layer
             }
         }
 
-        private dailyExchange(stDailyExchange exchange)
+        private dailyExchange(data_type_layer.stDailyExchange exchange)
         {
             this.ID = exchange.ID;
             this.TotalAmount = exchange.TotalAmount; 
@@ -42,7 +41,7 @@ namespace buisness_layer
             this.MiscCost = exchange.MiscCost;
             this.BusNumber = exchange.BusNumber;
             this.RepairNotes = exchange.RepairNotes; 
-            mode = enMode.update; 
+            mode = data_type_layer.enMode.update; 
         }
 
         public dailyExchange()
@@ -57,20 +56,20 @@ namespace buisness_layer
             this.Date = DateTime.Now;
             this.MiscCost = -1;
             this.RepairNotes = string.Empty; 
-            this.mode = enMode.add;
+            this.mode = data_type_layer.enMode.add;
         }
 
         public static dailyExchange Find(int ID)
         {
-            stDailyExchange exchange = new stDailyExchange();
+            data_type_layer.stDailyExchange exchange = new data_type_layer.stDailyExchange();
             if (dailyExchange_data.getExchange(ID, ref exchange))
                 return new dailyExchange(exchange);
             else
                 return null;
         }
         public static dailyExchange Find(DateTime date, int BusNumber)
-        {   
-            stDailyExchange exchange = new stDailyExchange();
+        {
+            data_type_layer.stDailyExchange exchange = new data_type_layer.stDailyExchange();
             if (dailyExchange_data.getExchangeByDate_BusNumber(date, BusNumber, ref exchange))
                 return new dailyExchange(exchange);
             else
@@ -78,7 +77,7 @@ namespace buisness_layer
         }
         private bool _Add()
         {
-            stDailyExchange exchange = new stDailyExchange
+            data_type_layer.stDailyExchange exchange = new data_type_layer.stDailyExchange
             {
                 ID = this.ID,
                 TotalAmount = this.TotalAmount,
@@ -96,7 +95,7 @@ namespace buisness_layer
         }
         private bool _Update()
         {
-            stDailyExchange exchange = new stDailyExchange
+            data_type_layer.stDailyExchange exchange = new data_type_layer.stDailyExchange
             {
                 ID = this.ID,
                 TotalAmount = this.TotalAmount,
@@ -116,14 +115,14 @@ namespace buisness_layer
         {
             switch (mode)
             {
-                case enMode.add:
+                case data_type_layer.enMode.add:
                     if (_Add())
                     {
-                        this.mode = enMode.update;
+                        this.mode = data_type_layer.enMode.update;
                         return true;
                     }
                     break;
-                case enMode.update:
+                case data_type_layer.enMode.update:
                     return _Update();
             }
 
