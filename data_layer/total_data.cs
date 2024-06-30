@@ -18,6 +18,7 @@ namespace data_layer
                 command.Parameters.AddWithValue("@todate", todate);
                 command.Parameters.AddWithValue("@busnumber", busNumber);
 
+                connection.Open();
                 object result = command.ExecuteScalar();
                 if (result != null && double.TryParse(result.ToString(), out double value))
                 {

@@ -39,14 +39,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dateFrom = new System.Windows.Forms.DateTimePicker();
             this.gbBus = new System.Windows.Forms.GroupBox();
-            this.rdBusThree = new System.Windows.Forms.RadioButton();
+            this.rdAllBuses = new System.Windows.Forms.RadioButton();
             this.rdBusTwo = new System.Windows.Forms.RadioButton();
             this.rdBusOne = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lblResult = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.rdAllBuses = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gbBus.SuspendLayout();
@@ -87,6 +86,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(188, 34);
             this.comboBox1.TabIndex = 23;
+            //this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -131,6 +131,7 @@
             this.dateTo.Name = "dateTo";
             this.dateTo.Size = new System.Drawing.Size(200, 32);
             this.dateTo.TabIndex = 3;
+            this.dateTo.Value = new System.DateTime(2024, 6, 30, 0, 0, 0, 0);
             // 
             // label4
             // 
@@ -141,7 +142,7 @@
             this.label4.Size = new System.Drawing.Size(54, 29);
             this.label4.TabIndex = 2;
             this.label4.Text = "الى :";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            //this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -160,11 +161,11 @@
             this.dateFrom.Name = "dateFrom";
             this.dateFrom.Size = new System.Drawing.Size(200, 32);
             this.dateFrom.TabIndex = 0;
+            this.dateFrom.Value = new System.DateTime(2024, 6, 1, 0, 0, 0, 0);
             // 
             // gbBus
             // 
             this.gbBus.Controls.Add(this.rdAllBuses);
-            this.gbBus.Controls.Add(this.rdBusThree);
             this.gbBus.Controls.Add(this.rdBusTwo);
             this.gbBus.Controls.Add(this.rdBusOne);
             this.gbBus.Location = new System.Drawing.Point(25, 135);
@@ -174,17 +175,17 @@
             this.gbBus.TabStop = false;
             this.gbBus.Text = "الباص";
             // 
-            // rdBusThree
+            // rdAllBuses
             // 
-            this.rdBusThree.AutoSize = true;
-            this.rdBusThree.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBusThree.Location = new System.Drawing.Point(57, 43);
-            this.rdBusThree.Name = "rdBusThree";
-            this.rdBusThree.Size = new System.Drawing.Size(140, 30);
-            this.rdBusThree.TabIndex = 19;
-            this.rdBusThree.TabStop = true;
-            this.rdBusThree.Text = "الباص الثالث";
-            this.rdBusThree.UseVisualStyleBackColor = true;
+            this.rdAllBuses.AutoSize = true;
+            this.rdAllBuses.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdAllBuses.Location = new System.Drawing.Point(302, 115);
+            this.rdAllBuses.Name = "rdAllBuses";
+            this.rdAllBuses.Size = new System.Drawing.Size(71, 30);
+            this.rdAllBuses.TabIndex = 20;
+            this.rdAllBuses.TabStop = true;
+            this.rdAllBuses.Text = "الكل";
+            this.rdAllBuses.UseVisualStyleBackColor = true;
             // 
             // rdBusTwo
             // 
@@ -202,7 +203,7 @@
             // 
             this.rdBusOne.AutoSize = true;
             this.rdBusOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBusOne.Location = new System.Drawing.Point(236, 43);
+            this.rdBusOne.Location = new System.Drawing.Point(239, 43);
             this.rdBusOne.Name = "rdBusOne";
             this.rdBusOne.Size = new System.Drawing.Size(134, 30);
             this.rdBusOne.TabIndex = 17;
@@ -257,18 +258,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // rdAllBuses
-            // 
-            this.rdAllBuses.AutoSize = true;
-            this.rdAllBuses.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdAllBuses.Location = new System.Drawing.Point(126, 79);
-            this.rdAllBuses.Name = "rdAllBuses";
-            this.rdAllBuses.Size = new System.Drawing.Size(71, 30);
-            this.rdAllBuses.TabIndex = 20;
-            this.rdAllBuses.TabStop = true;
-            this.rdAllBuses.Text = "الكل";
-            this.rdAllBuses.UseVisualStyleBackColor = true;
-            // 
             // frmExchangesInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -303,7 +292,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox gbBus;
-        private System.Windows.Forms.RadioButton rdBusThree;
         private System.Windows.Forms.RadioButton rdBusTwo;
         private System.Windows.Forms.RadioButton rdBusOne;
         private System.Windows.Forms.GroupBox groupBox3;
